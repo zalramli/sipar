@@ -1,21 +1,35 @@
 <!-- Breadcrumbs-->
+
+<?php
+if (isset($_POST['simpan'])) {
+  $kode = $_POST['kode'];
+  $kategori = $_POST['kategori'];
+
+  $query = mysqli_query($koneksi,"INSERT INTO kategori_wisata (id_kategoriWisata,nama_kategori) VALUES ('$kode','$kategori') ");
+   if($query){
+        echo "<script>window.location = 'backend.php?/=kategoriWisata_tampil'</script>";
+        }
+}
+
+?>
+
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="index.html">Dashboard</a>
   </li>
   <li class="breadcrumb-item active">Input Wisata</li>
 </ol>  
-<a href="?/=wisata_tampil"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
+<a href="?/=kategoriWisata_tampil"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
 
 <form action="" method="post"><br>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputText"><b>Nama</b></label>
-      <input type="text" name="nama" class="form-control" id="inputText" value="<?php echo autogenerate('id_kategoriWisata','kategori_wisata',3,'KTW')?>" readonly>
+      <label for="inputText"><b>Kode</b></label>
+      <input type="text" name="kode" class="form-control" id="inputText" placeholder="Masukan kategori wisata">
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kategori Wisata</b></label>
-      <input type="text" name="lokasi" class="form-control" id="inputText" placeholder="Masukan kategori wisata">
+      <input type="text" name="kategori" class="form-control" id="inputText" placeholder="Masukan kategori wisata">
     </div>
   </div>
     

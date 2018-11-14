@@ -56,7 +56,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="?/=wisata_input">Input wisata</a>
-            <a class="dropdown-item" href="?/=wisata_tampil">Tampil wisata</a>
+            <a class="dropdown-item" href="?/=wisata_tampil">Tampil Wisata</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -65,10 +65,24 @@
             <span>Kategori</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="?/=kategori_wisata">Kategori Wisata</a>
-            <a class="dropdown-item" href="?/=kategori_kuliner">Kategori Kuliner</a>
+            <a class="dropdown-item" href="?/=kategoriWisata_input">Input Kategori Wisata</a>
+            <a class="dropdown-item" href="?/=kategoriWisata_tampil">Tampil Kategori Wisata</a>
+          </div>
+
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Event</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="?/=event_input">Input Event</a>
+            <a class="dropdown-item" href="?/=event_tampil">Tampil Event</a>
           </div>
         </li>
+
+
         <li class="nav-item">
           <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>

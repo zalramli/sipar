@@ -10,7 +10,7 @@
               <i class="fas fa-table"></i>
               Data Event</div>
             <div class="card-body">
-              <a href="?/=eventInput"><button class="btn btn-outline-success"><i class="fa fa-plus"> Tambah</i></button></a>
+              <a href="?/=event_input"><button class="btn btn-outline-success"><i class="fa fa-plus"> Tambah</i></button></a>
               <div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -26,7 +26,7 @@
                   <tbody>
                     <?php
                     $no=1;
-                    $query = mysqli_query($koneksi,"SELECT * FROM event ");
+                    $query = mysqli_query($koneksi,"SELECT * FROM event");
                     foreach ($query as $data ) {
                      ?>
                     
@@ -35,7 +35,7 @@
                       <td width="10%"><?php echo $data['nama']; ?></td>
                       <td width="10%"><?php echo $data['tgl_event']; ?></td>
                       <td width="13%"><?php echo $data['lokasi']; ?></td>
-                      <td width="20%"><img width="245" height="150" src="asset/img/gprofil_wisata/<?php echo $data['gambar'] ?>" alt=""></td>
+                      <td width="20%"><img width="245" height="150" src="asset/img/event/<?php echo $data['gambar']; ?>" alt=""></td>
                       <td width="25%"><?php echo substr($data['deskripsi'],0,40)." ..."; ?></td>
                       <td style="text-align: center;" width="20%">
                         <a class="btn btn-outline-secondary" href=""><i class="fa fa-eye"></i></a>

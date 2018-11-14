@@ -8,11 +8,12 @@ if (isset($_POST['simpan'])) {
   $gbr = $_FILES['gbr']['name'];
   $file_tmp = $_FILES['gbr']['tmp_name'];  
   //gambar_detail
+        move_uploaded_file($file_tmp, "asset/img/event/".$gbr);
 
   
           $query = mysqli_query($koneksi,"INSERT INTO event (nama,tgl_event,lokasi,gambar,deskripsi) VALUES('$nama2','$tgl','$lokasi1','$gbr','$deskripsi1')");
         if($query){
-        echo "<script>window.location = 'backend.php?/=Eventtampil'</script>";
+        echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
         }else{
           echo 'Gagal Insert';
         }

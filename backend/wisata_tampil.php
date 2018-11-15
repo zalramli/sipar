@@ -1,3 +1,13 @@
+<?php 
+if ($_GET['hapus']) {
+  $id = $_GET['hapus'];
+  $query = mysqli_query($koneksi,"DELETE FROM wisata WHERE id_wisata='$id'");
+}
+if ($query) {
+        echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";  
+}
+ ?>
+
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
@@ -10,7 +20,7 @@
               <i class="fas fa-table"></i>
               Data Wisata</div>
             <div class="card-body">
-              <a href="?/=wisata_input"><button class="btn btn-outline-success"><i class="fa fa-plus"> Tambah</i></button></a>
+              <a href="?/=wisata_input"><button class="btn btn-secondary"><i class="fa fa-plus"> Tambah</i></button></a>
               <div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -36,12 +46,12 @@
                       <td width="10%"><?php echo $data['nama']; ?></td>
                       <td width="10%"><?php echo $data['nama_kategori']; ?></td>
                       <td width="13%"><?php echo $data['lokasi']; ?></td>
-                      <td style="text-align: center;" width="20%"><img style="max-height: 100px; max-width: 100px" src="asset/img/gprofil_wisata/<?php echo $data['gambar_profil'] ?>" alt=""></td>
+                      <td width="20%"><img width="245" height="150" src="asset/img/gprofil_wisata/<?php echo $data['gambar_profil'] ?>" alt=""></td>
                       <td width="25%"><?php echo substr($data['deskripsi'],0,40)." ..."; ?></td>
                       <td style="text-align: center;" width="20%">
-                        <a class="btn btn-outline-secondary" href=""><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-secondary" href="?/=akomodasi&id=<?php echo $data['id_wisata'] ?>">akomodasi</a>
                         <a href="?/=wisata_edit&id=<?php echo $data['id_wisata']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
-                        <a style="margin-top: 5px;" class="btn btn-outline-danger" href=""><i class="fa fa-trash"></i></a>
+                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" style="margin-top: 5px;" class="btn btn-outline-danger" href="?/=wisata_tampil&hapus=<?php echo $data['id_wisata'] ?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php 

@@ -1,5 +1,5 @@
 <?php 
-$id = $_GET['id'];
+$id=$_REQUEST['id'];
 $query = mysqli_query($koneksi,"SELECT * FROM wisata INNER JOIN kategori_wisata ON kategori_wisata.id_kategoriWisata=wisata.id_kategoriWisata WHERE id_wisata=$id");
 $data=mysqli_fetch_array($query);
 $tampung = $data['nama_kategori'];
@@ -29,29 +29,29 @@ if (isset($_POST['simpan'])) {
 
         move_uploaded_file($file_tmp, "asset/img/gprofil_wisata/".$gambar_profil);
         if ($gambar_profil =="" && $images== "") {
-          $query = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',deskripsi='$deskripsi' WHERE id_wisata='$id'");
-            if ($query) {
+          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+            if ($query3) {
             echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
             } else {
               echo "gagal insert";
             }
         } else if ($gambar_profil == "") {
-          $query = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',detail_gambar='$images',deskripsi='$deskripsi' WHERE id_wisata='$id'");
-            if ($query) {
+          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',detail_gambar='$images',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+            if ($query3) {
             echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
             } else {
               echo "gagal insert";
             }
         } else if ($images =="") {
-          $query = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',deskripsi='$deskripsi' WHERE id_wisata='$id'");
-            if ($query) {
+          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+            if ($query3) {
             echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
             } else {
               echo "gagal insert";
             }
         } else {
-          $query = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',detail_gambar='$images',deskripsi='$deskripsi' WHERE id_wisata='$id'");
-            if ($query) {
+          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',detail_gambar='$images',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+            if ($query3) {
             echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
             } else {
               echo "gagal insert";

@@ -35,7 +35,7 @@
                       <td width="10%"><?php echo $data['nama']; ?></td>
                       <td width="10%"><?php echo $data['tgl_event']; ?></td>
                       <td width="13%"><?php echo $data['lokasi']; ?></td>
-                      <td width="20%"><img width="245" height="150" src="asset/img/event/<?php echo $data['gambar']; ?>" alt=""></td>
+                      <td style="text-align: center;" width="20%"><img style="max-height: 100px; max-width: 100px"; src="asset/img/event/<?php echo $data['gambar']; ?>" alt=""></td>
                       <td width="25%"><?php echo substr($data['deskripsi'],0,40)." ..."; ?></td>
                       <td style="text-align: center;" width="20%">
                         <a class="btn btn-outline-secondary" href=""><i class="fa fa-eye"></i></a>

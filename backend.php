@@ -49,15 +49,25 @@
             <span>Dashboard</span>
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Wisata</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="?/=wisata_input">Input wisata</a>
-            <a class="dropdown-item" href="?/=wisata_tampil">Tampil Wisata</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="?/=wisata_tampil">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Wisata</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?/=kuliner_tampil">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Kuliner</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?/=event_tampil">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Event</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?/=jadwal_transportasiTampil">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Jadwal Transportasi</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,34 +75,21 @@
             <span>Kategori</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="?/=kategoriWisata_input">Input Kategori Wisata</a>
-            <a class="dropdown-item" href="?/=kategoriWisata_tampil">Tampil Kategori Wisata</a>
-          </div>
-
-
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Event</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="?/=event_input">Input Event</a>
-            <a class="dropdown-item" href="?/=event_tampil">Tampil Event</a>
+            <a class="dropdown-item" href="?/=kategoriWisata_tampil">Kategori Wisata</a>
+            <a class="dropdown-item" href="">Kategori Kuliner</a>
           </div>
         </li>
-
-
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="?/=tentang_tampil">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+            <span>Tentang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+          <a class="nav-link" href="?/=kategori_wisatax">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>XKategori</span></a>
         </li>
+        
       </ul>
 
       <div id="content-wrapper">
@@ -103,6 +100,13 @@
                    include 'koneksi/koneksi.php';
                     if($_GET['/']){
                     include 'backend/'.$_GET['/'].'.php';
+                    include 'backend/wisata/'.$_GET['/'].'.php';
+                    include 'backend/kuliner/'.$_GET['/'].'.php';
+                    include 'backend/event/'.$_GET['/'].'.php';
+                    include 'backend/jadwal_transportasi/'.$_GET['/'].'.php';
+                    include 'backend/kategori_wisata/'.$_GET['/'].'.php';
+                    include 'backend/tentang/'.$_GET['/'].'.php';
+                    include 'backend/xmodal_kategori/'.$_GET['/'].'.php';
                     }
                   ?>
 

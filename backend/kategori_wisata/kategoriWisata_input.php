@@ -25,7 +25,7 @@ if (isset($_POST['simpan'])) {
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kode</b></label>
-      <input type="text" name="kode" class="form-control" id="inputText" placeholder="Masukan kategori wisata">
+      <input type="text" name="kode" class="form-control" id="inputText" placeholder="Masukan kategori wisata" value="<?php echo kode('id_kategoriWisata','kategori_wisata',3,'KW') ?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kategori Wisata</b></label>

@@ -3,7 +3,6 @@ if (isset($_POST['simpan'])) {
   $nama2 = ucwords($_POST['nama2']); // awal kata huruf kapital
   $tgl = $_POST['tgl'];
   $lokasi1 = ucwords($_POST['lokasi1']);
-  $deskripsi1 = $_POST['deskripsi1'];
   //gambar profil
   $gbr = $_FILES['gbr']['name'];
   $file_tmp = $_FILES['gbr']['tmp_name'];  
@@ -11,7 +10,7 @@ if (isset($_POST['simpan'])) {
         move_uploaded_file($file_tmp, "asset/img/event/".$gbr);
 
   
-          $query = mysqli_query($koneksi,"INSERT INTO event (nama,tgl_event,lokasi,gambar,deskripsi) VALUES('$nama2','$tgl','$lokasi1','$gbr','$deskripsi1')");
+          $query = mysqli_query($koneksi,"INSERT INTO event (nama,tgl_event,lokasi,gambar) VALUES('$nama2','$tgl','$lokasi1','$gbr')");
         if($query){
         echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
         }else{
@@ -58,12 +57,6 @@ if (isset($_POST['simpan'])) {
           <button type="button" class="btn btn-danger">Hapus</button>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <label for="inputText"><b>Deskripsi</b></label>
-      <textarea class="form-control" name="deskripsi1" placeholder="Masukan deskripsi . . . . " id="exampleFormControlTextarea1" rows="7"></textarea>
     </div>
   </div>
   

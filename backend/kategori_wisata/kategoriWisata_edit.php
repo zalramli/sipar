@@ -27,7 +27,7 @@ if (isset($_POST['update'])){
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kode</b></label>
-      <input type="text" name="kode" class="form-control" id="inputText" placeholder="Masukan kategori wisata" value="<?= $data['id_kategoriWisata'] ?>">
+      <input type="text" name="kode" class="form-control" id="inputText" placeholder="Masukan kategori wisata" value="<?= $data['id_kategoriWisata'] ?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kategori Wisata</b></label>

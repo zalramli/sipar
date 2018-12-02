@@ -20,7 +20,6 @@
                       <th>Tanggal</th>
                       <th>Lokasi</th>
                       <th>gambar</th>
-                      <th>Deskripsi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -36,10 +35,8 @@
                       <td width="10%"><?php echo $data['tgl_event']; ?></td>
                       <td width="13%"><?php echo $data['lokasi']; ?></td>
                       <td style="text-align: center;" width="20%"><img style="max-height: 100px; max-width: 100px"; src="asset/img/event/<?php echo $data['gambar']; ?>" alt=""></td>
-                      <td width="25%"><?php echo substr($data['deskripsi'],0,40)." ..."; ?></td>
                       <td style="text-align: center;" width="20%">
-                        <a class="btn btn-outline-secondary" href=""><i class="fa fa-eye"></i></a>
-                        <a href="?/=wisata_edit&id=<?php echo $data['id_wisata']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
+                        <a href="?/=event_edit&id=<?php echo $data['id_event']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
                         <a style="margin-top: 5px;" class="btn btn-outline-danger" href=""><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>

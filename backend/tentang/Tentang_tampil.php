@@ -25,7 +25,6 @@
                   	<?php 
                   	$query = mysqli_query($koneksi,"SELECT * FROM tentang");
                   	foreach ($query as $data) {
-                  		# code...
                   	?>
                     
                     <tr>

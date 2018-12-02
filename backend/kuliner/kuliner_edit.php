@@ -1,9 +1,9 @@
 <?php 
-$id=$_REQUEST['id'];
-$query = mysqli_query($koneksi,"SELECT * FROM wisata INNER JOIN kategori_wisata ON kategori_wisata.id_kategoriWisata=wisata.id_kategoriWisata WHERE id_wisata=$id");
+$id=$_GET['id'];
+$query = mysqli_query($koneksi,"SELECT * FROM tempat_kuliner INNER JOIN kategori_kuliner ON kategori_kuliner.id_kategoriKuliner=tempat_kuliner.id_kategoriKuliner WHERE id_tempat='$id'");
 $data=mysqli_fetch_array($query);
 $tampung = $data['nama_kategori'];
-$query2 = mysqli_query($koneksi,"SELECT * FROM kategori_wisata WHERE nama_kategori NOT IN ('$tampung') ORDER BY id_kategoriWisata ASC");
+$query2 = mysqli_query($koneksi,"SELECT * FROM kategori_kuliner WHERE nama_kategori NOT IN ('$tampung') ORDER BY id_kategoriKuliner ASC");
 if (isset($_POST['simpan'])) {
   $nama = ucwords($_POST['nama']); // awal kata huruf kapital
   $kategori = $_POST['kategori'];
@@ -20,39 +20,39 @@ if (isset($_POST['simpan'])) {
       if ($tmpFilePath != ""){
         //Setup our new file path
         $filename[] = $_FILES['upload']['name'][$i];
-        $newFilePath = "asset/img/gdetail_wisata/".$_FILES['upload']['name'][$i];
+        $newFilePath = "asset/img/gdetail_kuliner/".$_FILES['upload']['name'][$i];
         //Upload the file into the temp dir
         move_uploaded_file($tmpFilePath, $newFilePath);
       }
     }
     $images = implode(",",$filename);
 
-        move_uploaded_file($file_tmp, "asset/img/gprofil_wisata/".$gambar_profil);
+        move_uploaded_file($file_tmp, "asset/img/gprofil_kuliner/".$gambar_profil);
         if ($gambar_profil =="" && $images== "") {
-          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+          $query3 = mysqli_query($koneksi,"UPDATE tempat_kuliner SET nama='$nama',id_kategoriKuliner='$kategori',lokasi='$lokasi',deskripsi='$deskripsi' WHERE id_tempat='$id'");
             if ($query3) {
-            echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
+            echo "<script>window.location = 'backend.php?/=kuliner_tampil'</script>";
             } else {
               echo "gagal insert";
             }
         } else if ($gambar_profil == "") {
-          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',detail_gambar='$images',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+          $query3 = mysqli_query($koneksi,"UPDATE tempat_kuliner SET nama='$nama',id_kategoriKuliner='$kategori',lokasi='$lokasi',gambar_detail='$images',deskripsi='$deskripsi' WHERE id_tempat='$id'");
             if ($query3) {
-            echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
+            echo "<script>window.location = 'backend.php?/=kuliner_tampil'</script>";
             } else {
               echo "gagal insert";
             }
         } else if ($images =="") {
-          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+          $query3 = mysqli_query($koneksi,"UPDATE tempat_kuliner SET nama='$nama',id_kategoriKuliner='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',deskripsi='$deskripsi' WHERE id_tempat='$id'");
             if ($query3) {
-            echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
+            echo "<script>window.location = 'backend.php?/=kuliner_tampil'</script>";
             } else {
               echo "gagal insert";
             }
         } else {
-          $query3 = mysqli_query($koneksi,"UPDATE wisata SET nama='$nama',id_kategoriWisata='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',detail_gambar='$images',deskripsi='$deskripsi' WHERE id_wisata='$id'");
+          $query3 = mysqli_query($koneksi,"UPDATE tempat_kuliner SET nama='$nama',id_kategoriKuliner='$kategori',lokasi='$lokasi',gambar_profil='$gambar_profil',gambar_detail='$images',deskripsi='$deskripsi' WHERE id_tempat='$id'");
             if ($query3) {
-            echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
+            echo "<script>window.location = 'backend.php?/=kuliner_tampil'</script>";
             } else {
               echo "gagal insert";
             }
@@ -64,9 +64,9 @@ if (isset($_POST['simpan'])) {
   <li class="breadcrumb-item">
     <a href="index.html">Dashboard</a>
   </li>
-  <li class="breadcrumb-item active">Edit Wisata</li>
+  <li class="breadcrumb-item active">Edit Kuliner</li>
 </ol>  
-<a href="?/=wisata_tampil"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
+<a href="?/=kuliner"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
 
 <form action="" method="post" enctype="multipart/form-data"><br>
   <div class="form-row">
@@ -75,11 +75,11 @@ if (isset($_POST['simpan'])) {
       <input type="text" name="nama" class="form-control" id="inputText" placeholder="Masukan nama" value="<?php echo $data['nama'] ?>">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputState"><b>Kategori Wisata</b></label>
+      <label for="inputState"><b>Kategori Kuliner</b></label>
       <select id="inputState" name="kategori" class="form-control">
-      <option value="<?php echo $data['id_kategoriWisata']; ?>"><?php echo $data['nama_kategori']; selected ?></option>
+      <option value="<?php echo $data['id_kategoriKuliner']; ?>"><?php echo $data['nama_kategori']; selected ?></option>
       <?php foreach ($query2 as $datas){ ?>
-      <option value="<?php echo $datas['id_kategoriWisata']; ?>"><?php echo $datas['nama_kategori'] ?></option>
+      <option value="<?php echo $datas['id_kategoriKuliner']; ?>"><?php echo $datas['nama_kategori'] ?></option>
       <?php } ?>
       </select>
     </div>
@@ -130,7 +130,6 @@ if (isset($_POST['simpan'])) {
 
 
     <script src="backend/template/js/jquery-1.12.4.min.js"></script>
-    <script src="backend/template/js/bootstrap.min.js"></script>
     <script src="backend/template/js/bootstrap-imageupload.js"></script>
 
     <script>

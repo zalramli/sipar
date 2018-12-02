@@ -1,5 +1,7 @@
 <?php
+
 if (isset($_POST['simpan'])) {
+  $id = $_POST['id'];
   $nama = ucwords($_POST['nama']); // awal kata huruf kapital
   $kategori = $_POST['kategori'];
   $lokasi = ucwords($_POST['lokasi']);
@@ -23,7 +25,7 @@ if (isset($_POST['simpan'])) {
     $images = implode(",",$filename);
 
         move_uploaded_file($file_tmp, "asset/img/gprofil_wisata/".$gambar_profil);
-        $query = mysqli_query($koneksi,"INSERT INTO wisata (id_kategoriWisata,nama,lokasi,gambar_profil,detail_gambar,deskripsi) VALUES('$kategori','$nama','$lokasi','$gambar_profil','$images','$deskripsi')");
+        $query = mysqli_query($koneksi,"INSERT INTO wisata VALUES('$id','$kategori','$nama','$lokasi','$gambar_profil','$images','$deskripsi')");
         if($query){
         echo "<script>window.location = 'backend.php?/=wisata_tampil'</script>";
         }else{
@@ -40,11 +42,11 @@ if (isset($_POST['simpan'])) {
   <li class="breadcrumb-item active">Input Wisata</li>
 </ol>  
 <a href="?/=wisata_tampil"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
-
 <form action="" method="post" enctype="multipart/form-data"><br>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>Nama</b></label>
+      <input type="hidden" name="id" value="<?php echo kode('id_wisata','wisata',3,'W') ?>">
       <input type="text" name="nama" class="form-control" id="inputText" placeholder="Masukan nama">
     </div>
     <div class="form-group col-md-6">
@@ -144,4 +146,5 @@ if (isset($_POST['simpan'])) {
             }
         }
     };
+    
     </script>

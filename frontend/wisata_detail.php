@@ -1,14 +1,12 @@
 <?php
 $id = $_GET['id'];
-$query = mysqli_query($koneksi,"SELECT * FROM tempat_kuliner WHERE id_tempat='$id'");
+$query = mysqli_query($koneksi,"SELECT * FROM wisata WHERE id_wisata='$id'");
 $data = mysqli_fetch_array($query);
 if (isset($_POST['simpan'])) {
   $rating = $_POST['rate'];
-  $nama = $_POST['nama'];
-  $pesan = $_POST['pesan'];
-  $query2 = mysqli_query($koneksi,"INSERT INTO rating_kuliner VALUES ('','$id','$nama','$pesan','$rating')");
+  $query2 = mysqli_query($koneksi,"INSERT INTO rating_wisata VALUES ('','$id','$rating')");
   if ($query2) {
-    echo "<script>window.location = '?halaman=kuliner_detail&id=$id'</script>";
+    echo "<script>window.location = '?halaman=wisata_detail&id=$id'</script>";
   }
 }
 ?>
@@ -28,7 +26,7 @@ if (isset($_POST['simpan'])) {
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
-      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: gray" href="?halaman=kuliner">Kuliner Cafe</a> <b> > </b> <a style="color: black" href=""><?php echo $data['nama'] ?></a>
+      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: gray" href="?halaman=wisata">Wisata Alam</a> <b> > </b> <a style="color: black" href=""><?php echo $data['nama'] ?></a>
     </div>
   </div>
 </div>
@@ -40,7 +38,7 @@ if (isset($_POST['simpan'])) {
           <a class="nav-link active" role="tab" data-toggle="tab" href="#home">Detail</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" role="tab" data-toggle="tab" href="#profil">Daftar Menu</a>
+          <a class="nav-link" role="tab" data-toggle="tab" href="#profil">Lokasi</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" role="tab" data-toggle="tab" href="#rating">Review & Rating</a>
@@ -74,9 +72,13 @@ if (isset($_POST['simpan'])) {
                 </div>
 
                     <div class="form-group">
-                      <label for="inputnama">Email*</label>
+                      <label for="inputnama">Nama*</label>
                       <input type="text" class="form-control" name="nama" id="inputnama" placeholder="name@example.com">
                     </div>
+                    <div class="form-group">
+                    <label for="inputemail">Email*</label>
+                    <input type="email" class="form-control" name="email" id="inputemail" placeholder="name@example.com">
+                  </div>
                   <div class="form-group">
                     <label for="textarea">Pesan*</label>
                     <textarea class="form-control" id="textarea" name="pesan" rows="6"></textarea>
@@ -94,13 +96,13 @@ if (isset($_POST['simpan'])) {
         <div class="transisi-galery">
           <div class="row">
             <?php
-            $images=$data['gambar_detail'];
+            $images=$data['detail_gambar'];
             $temp = explode(',',$images);
             for($i=0;$i<count($temp);$i++)
             {
             echo '
             <div class="col-md-4 text-center">
-              <a href="asset/img/gdetail_kuliner/'.$temp[$i].'"><img class="img-fluid image" src="asset/img/gdetail_kuliner/'.$temp[$i].'"></a>
+              <a href="asset/img/gdetail_wisata/'.$temp[$i].'"><img class="img-fluid image" src="asset/img/gdetail_wisata/'.$temp[$i].'"></a>
             </div>
             ';
             }

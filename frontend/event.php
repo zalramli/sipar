@@ -1,23 +1,21 @@
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
+      <div class="event-cover">
       <img src="event2.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="event-caption">
+      <p>Event</p>
+    </div>
     </div>
   </div>
 </div>
 <div class="container jarak-event text-center">
-  <div class="judul">
-    <h2>Event</h2>
-    <?php
-    $bulan = ["","Jan","Feb","Mar","Apr","Mei","Jun","Jul","Aug","Sept","Okt","Nov","Des"];
-    
-    echo "<h3>".$bulan[date("m")]." ".date("Y")."</h3>";
-    ?>
-  </div>
   <!-- <div class="row">
     <div class="col-md-12 bungkus-tgl">
       <div id="tgl" class="owl-carousel owl-theme owl-tgl">
         <?php
+        $bulan = ["","Jan","Feb","Mar","Apr","Mei","Jun","Jul","Aug","Sept","Okt","Nov","Des"];
         $bln = [1,2,3,4,5,6,7,8,9,10,11,12];
         for($i=1;$i<=count($bln);$i++){
         $active = ($i." ".date("Y")==date("m Y")) ? "class='active'" : "";
@@ -27,7 +25,36 @@
       </div>
     </div>
   </div> -->
-  <div class="container">
+  <div class="container jarak-content">
+    <div class="row">
+      <div style="" class="col-md-6">
+        <div class="">
+          <img style="height: 46%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
+        </div>
+      </div>
+      <div style="" class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <img style="height: 46%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div>
+          <img style="height: 5%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
+        </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+          <img style="height: 5%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
+        </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="container jarak-content">
     <div class="row bungkus-tgl">
       <?php
       $bln = [1,2,3,4,5,6,7,8,9,10,11,12];
@@ -42,26 +69,6 @@
       ?>
     </div>
   </div>
-  <div class="container">
-    <div class="row bungkus-tgl">
-      <div class="col-lg-1">
-        <a href="?halaman=event&jan">1</a>
-      </div>
-      <div class="col-lg-1">
-        <a href="?halaman=event&feb">2</a>
-      </div>
-      <div class="col-lg-1">
-        <a href="?halaman=event&mar">3</a>
-      </div>
-    </div>
-  </div>
-  <?php if (isset($_GET['jan'])) {
-    echo "Januari";
-  } 
-  else if (isset($_GET['feb'])) {
-    echo "Februari";
-  } 
-   ?>
 </div>
 <div class="container jarak-mb5 card-event">
   <div class="transisi-galery">

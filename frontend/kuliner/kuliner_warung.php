@@ -3,9 +3,9 @@
     <div class="col-md-12">
       <img src="2.jpg" class="img-fluid" alt="Responsive image">
       <div class="navigasi">
-        <a href="" class="nav-custActive">Alam</a>
-        <a href="" class="nav-cust">Buatan</a>
-        <a href="" class="nav-cust">Religi</a>
+        <a href="?halaman=kuliner_cafe" class="nav-cust">Cafe</a>
+        <a href="?halaman=kuliner_warung" class="nav-custActive">Warung</a>
+        <a href="?halaman=kuliner_restoran" class="nav-cust">Restoran</a>
       </div>
     </div>
   </div>
@@ -13,67 +13,42 @@
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
-      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: black" href="">Wisata Alam</a>
+      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: black" href="">Kuliner Warung</a>
     </div>
   </div>
 </div>
-<!-- <div id="test-list">
-  <div class="container card-kuliner">
-    <div class="row">
-      <ul class="list">
-        <?php
-        $query = mysqli_query($koneksi,"SELECT * FROM wisata");
-        foreach ($query as $data) {
-        ?>
-        <li class="col-md-4 jarak-section">
-          <a href="?halaman=wisata_detail&id=<?php echo $data['id_wisata'] ?>" class="card-link">
-            <div class="card">
-              <img class="card-img-top" src="asset/img/gprofil_wisata/<?php echo $data['gambar_profil'] ?>" alt="Card image"/>
-              <div class="card-body">
-                <h5 class="card-title text-center"><?php echo $data['nama'] ?></h5>
-                <p class="card-text"><?php echo substr($data['deskripsi'],0,25) ?></p>
-                <h6 class="text-right text-custom">Read More <i class="fa fa-angle-double-right"></i></h6>
-              </div>
-            </div>
-          </a>
-        </li>
-        <?php } ?>
-      </ul>
-    <ul class="pagination"></ul>
-  </div>
-</div>
-</div> -->
-<div class="container pb-5 card-kuliner">
+<div class="container card-kuliner">
 <div class="row">
-  <div class="col-md-9">
-    <?php
-    $query = mysqli_query($koneksi,"SELECT wisata.nama,wisata.lokasi,wisata.gambar_profil,wisata.id_wisata, ROUND(AVG(rating_wisata.rating)) AS ratings FROM wisata LEFT JOIN rating_wisata ON wisata.id_wisata = rating_wisata.id_wisata GROUP BY wisata.id_wisata");
+  <div class="col-md-9 mb-5">
+    <?php 
+    $query = mysqli_query($koneksi,"SELECT tempat_kuliner.nama,tempat_kuliner.lokasi,tempat_kuliner.gambar_profil,tempat_kuliner.id_tempat,kategori_kuliner.nama_kategori, ROUND(AVG(rating_kuliner.rating)) AS ratings FROM tempat_kuliner JOIN kategori_kuliner ON tempat_kuliner.id_kategoriKuliner=kategori_kuliner.id_kategoriKuliner LEFT JOIN rating_kuliner ON tempat_kuliner.id_tempat = rating_kuliner.id_tempat WHERE kategori_kuliner.nama_kategori = 'Warung' GROUP BY tempat_kuliner.id_tempat");
     $jml = mysqli_num_rows($query);
-    for ($i=0; $i < $jml ; $i++) {
-    $data = mysqli_fetch_array($query);
-    ?>
+    for ($i=0; $i < $jml ; $i++) { 
+      $data = mysqli_fetch_array($query);
+     ?>
     <div class="row">
       <div class="col-md-5 jarak-mb5">
-        <img class="card-img-top" src="asset/img/gprofil_wisata/<?php echo $data['gambar_profil'] ?>" alt="Card image"/>
+      <img class="card-img-top" src="asset/img/gprofil_kuliner/<?php echo $data['gambar_profil'] ?>" alt="Card image"/>
       </div>
       <div class="col-md-7 mb-5">
         <h4 class="mb-5"><?php echo $data['nama'] ?></h4>
         <p>Lokasi : <?php echo $data['lokasi'] ?></p>
         <p>Rating :
-          <?php
+        <?php
           $tampung = $data['ratings'];
           for ($j=1; $j <= $tampung ; $j++) {
           echo '<span style="color : #f1c40f" class="fa fa-star"></span>';
           }
         ?></p>
         <div>
-          <a style="text-decoration: none;" href="?halaman=wisata_detail&id=<?php echo $data['id_wisata'] ?>" class="btn btn-custom">Read More <i class="fas fa-arrow-right"></i></a>
+          <a style="text-decoration: none;" href="?halaman=kuliner_detail&id=<?php echo $data['id_tempat'] ?>" class="btn btn-custom">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
     <?php } ?>
+
   </div>
-  <div class="col-md-3">
+    <div class="col-md-3">
     <h5 class="text-center pb-2"><b>Top Destinasi</b></h5>
     <?php
     $query2 = mysqli_query($koneksi,"SELECT wisata.nama,wisata.lokasi,wisata.gambar_profil,wisata.id_wisata,kategori_wisata.nama_kategori, ROUND(AVG(rating_wisata.rating)) AS ratings FROM wisata JOIN kategori_wisata ON wisata.id_kategoriWisata=kategori_wisata.id_kategoriWisata LEFT JOIN rating_wisata ON wisata.id_wisata = rating_wisata.id_wisata GROUP BY wisata.id_wisata HAVING ROUND(AVG(rating_wisata.rating)) <= 5 limit 3");

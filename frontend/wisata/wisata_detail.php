@@ -1,6 +1,6 @@
 <?php
 $id = $_GET['id'];
-$query = mysqli_query($koneksi,"SELECT * FROM wisata WHERE id_wisata='$id'");
+$query = mysqli_query($koneksi,"SELECT * FROM wisata JOIN kategori_wisata ON wisata.id_kategoriWisata = kategori_wisata.id_kategoriWisata WHERE id_wisata='$id'");
 $data = mysqli_fetch_array($query);
 if (isset($_POST['simpan'])) {
   $rating = $_POST['rate'];
@@ -26,7 +26,7 @@ if (isset($_POST['simpan'])) {
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
-      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: gray" href="?halaman=wisata">Wisata Alam</a> <b> > </b> <a style="color: black" href=""><?php echo $data['nama'] ?></a>
+      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: gray" href="?halaman=wisata_<?php echo strtolower($data['nama_kategori']) ?>">Wisata <?php echo $data['nama_kategori'] ?></a> <b> > </b> <a style="color: black" href=""><?php echo $data['nama'] ?></a>
     </div>
   </div>
 </div>

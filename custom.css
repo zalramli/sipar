@@ -71,6 +71,7 @@ body {
 .navbar-light .active {
     color: purple !important;
 }
+
 /*Tutup */
 
 
@@ -276,10 +277,6 @@ a.card-link:hover {
 
 .gallery-block.destinasi-wisata .card img {
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-.gallery-block.destinasi-wisata .card-body {
-    text-align: center;
 }
 
 .gallery-block.destinasi-wisata .card-body p {
@@ -550,6 +547,7 @@ a.card-link:hover {
     font-weight: bold;
 
 }
+
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
     background-color: #f7f7f7 !important;
@@ -557,7 +555,8 @@ a.card-link:hover {
     border-bottom: 1px solid purple;
 
 }
-.artikel img{
+
+.artikel img {
     float: left;
     max-width: 100% !important;
     height: 230px !important;
@@ -566,41 +565,73 @@ a.card-link:hover {
 /*STAR RATING*/
 .rate {
     display: inline-block;
-    }
-    .star input {
+}
+
+.star input {
     display: none;
-    }
-    .star label {
+}
+
+.star label {
     float: right;
     margin-right: 5px;
     font-size: 0;
     color: #d9d9d9;
-    }
-    .star label:before {
+}
+
+.star label:before {
     content: "\f005";
     font-family: FontAwesome;
     font-size: 30px;
-    margin : 3px;
-    }
-    .star label:hover,
-    .star label:hover ~ label {
+    margin: 3px;
+}
+
+.star label:hover,
+.star label:hover~label {
     color: #fcd000;
     transition: 0.2s;
-    }
-    .star input:checked ~ label {
+}
+
+.star input:checked~label {
     color: #f1c40f;
-    }
-    .star input:checked ~ label:hover,
-    input:checked ~ label:hover ~ label {
+}
+
+.star input:checked~label:hover,
+input:checked~label:hover~label {
     color: #fcd000;
     transition: 0.2s;
-    }
-    /*TUTUp*/
-    .md3-img{
-        width: 90px;
-        height: 60px;
-    }
-    .img-wisatapilihan{
-        width: 100%;
-        height: 230px;
-    }
+}
+
+/*TUTUp*/
+.md3-img {
+    width: 90px;
+    height: 60px;
+}
+
+.img-wisatapilihan {
+    width: 100%;
+    height: 230px;
+}
+
+.paket-wisata a {
+    text-decoration: none;
+    color: black;
+}
+.event-cover{
+    position: relative;
+}
+.event-caption{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 40%;
+    margin-left: 23%;
+    margin-top: 6%;
+    border: 2px solid gray;
+    background-color: transparent;
+}
+.event-caption p{
+    text-align: center;
+    color: white;
+    margin: 4%;
+}

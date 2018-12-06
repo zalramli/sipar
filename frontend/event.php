@@ -32,25 +32,17 @@
           <img style="height: 46%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
         </div>
       </div>
-      <div style="" class="col-md-6">
+      <div class="col-md-6">
         <div class="row">
-          <div class="col-md-12">
-            <img style="height: 46%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
+          <div class="col-md-12" style="background: black">
+            <img style="height: 50%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div>
-          <img style="height: 5%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
-        </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-12" style="background-color: black">
             <div>
           <img style="height: 5%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
         </div>
           </div>
         </div>
-        
       </div>
     </div>
   </div>

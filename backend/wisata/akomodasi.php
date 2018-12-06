@@ -1,43 +1,46 @@
 <?php 
 $id = $_GET['id'];
 if (isset($_POST['simpan'])) {
-	$ids = $_POST['ids'];
-	$nama = $_POST['nama'];
-	$kategori = $_POST['kategori'];
-	$harga = $_POST['harga'];
-	$query = mysqli_query($koneksi,"INSERT INTO menu_kuliner VALUES ('','$ids','$nama','$kategori','$harga')");
-	if ($query) {
-            echo "<script>window.location = 'backend.php?/=menu_kuliner&id=$ids'</script>";
-
-	}
+  $id_wisata = $_POST['id_wisata'];
+  $titik_awal = $_POST['titik_awal'];
+  $kendaraan = $_POST['kendaraan'];
+  $harga = $_POST['harga'];
+  $dari = $_POST['dari'];
+  $ke = $_POST['ke'];
+  $query = mysqli_query($koneksi,"INSERT INTO akomodasi VALUES ('','$id_wisata','$titik_awal','$kendaraan','$harga','$dari','$ke')");
+  if ($query) {
+            echo "<script>window.location = 'backend.php?/=akomodasi&id=$id_wisata'</script>";
+  }
 }
 if (isset($_POST['edit'])) {
-  $id_tempat = $_POST['id_tempat'];
   $ids = $_POST['ids'];
-  $kategori = $_POST['kategori'];
-  $nama = $_POST['nama'];
+  $id_wisata = $_POST['id_wisata'];
+  $titik_awal = $_POST['titik_awal'];
+  $kendaraan = $_POST['kendaraan'];
   $harga = $_POST['harga'];
-  $query_edit = mysqli_query($koneksi,"UPDATE menu_kuliner SET kategori='$kategori',nama='$nama',harga='$harga' WHERE id_menu='$ids'");
+  $dari = $_POST['dari'];
+  $ke = $_POST['ke'];
+  $query_edit = mysqli_query($koneksi,"UPDATE akomodasi SET titik_awal='$titik_awal',kendaraan='$kendaraan',harga='$harga',dari='$dari',ke='$ke' WHERE id_akomodasi='$ids'");
   if ($query_edit) {
-        echo "<script>window.location = 'backend.php?/=menu_kuliner&id=$id_tempat'</script>";
+            echo "<script>window.location = 'backend.php?/=akomodasi&id=$id_wisata'</script>";
   }
 }
 if (isset($_GET['hapus'])) {
-	$id_hapus = $_GET['hapus'];
-	$id_tempat = $_GET['q'];
-	$query2 = mysqli_query($koneksi,"DELETE FROM menu_kuliner WHERE id_menu='$id_hapus'");
-	if ($query2) {
-            echo "<script>window.location = 'backend.php?/=menu_kuliner&id=$id_tempat'</script>";
-	}
+  $id_hapus = $_GET['hapus'];
+  $id_wisata = $_GET['w'];
+  $query_hapus = mysqli_query($koneksi,"DELETE FROM akomodasi WHERE id_akomodasi='$id_hapus'");
+  if ($query_hapus) {
+            echo "<script>window.location = 'backend.php?/=akomodasi&id=$id_wisata'</script>";
+  }
 }
-?>
-<script src="backend/template/js/ajax.js"></script>
+ ?>
+ <script src="backend/template/js/ajax.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $(".klik-edit").click(function(e) {
             var m = $(this).attr("id");
             $.ajax({
-                url: "backend/kuliner/edit_menu_kuliner.php",
+                url: "backend/wisata/edit_akomodasi.php",
                 type: "POST",
                 data : {id: m,},
                 success: function (ajaxData){
@@ -59,8 +62,10 @@ if (isset($_GET['hapus'])) {
                   <thead>
                     <tr style="text-align: center;">
                       <th>No</th>
-                      <th>Nama</th>
-                      <th>Kategori</th>
+                      <th>Kendaraan</th>
+                      <th>Titik Awal</th>
+                      <th>Dari</th>
+                      <th>Menuju</th>
                       <th>Harga</th>
                       <th>Aksi</th>
                     </tr>
@@ -68,17 +73,19 @@ if (isset($_GET['hapus'])) {
                   <tbody>
                     <?php
                     $no=1;
-                    $query = mysqli_query($koneksi,"SELECT menu_kuliner.id_menu,menu_kuliner.id_tempat,menu_kuliner.nama AS nama_menu,menu_kuliner.kategori,menu_kuliner.harga,tempat_kuliner.nama as nama_tempat FROM menu_kuliner JOIN tempat_kuliner ON menu_kuliner.id_tempat=tempat_kuliner.id_tempat WHERE menu_kuliner.id_tempat='$id'");
+                    $query = mysqli_query($koneksi,"SELECT * FROM akomodasi WHERE id_wisata='$id'");
                     foreach ($query as $data ) {
                      ?>
                     <tr>
                     	<td><?php echo $no++; ?></td>
-                    	<td><?php echo $data['nama_menu'] ?></td>
-                    	<td><?php echo $data['kategori'] ?></td>
-                    	<td><?php echo $data['harga'] ?></td>
+                      <td><?php echo $data['kendaraan'] ?></td>
+                    	<td><?php echo $data['titik_awal'] ?></td>
+                      <td><?php echo $data['dari'] ?></td>
+                    	<td><?php echo $data['ke'] ?></td>
+                      <td><?php echo $data['harga'] ?></td>
                     	<td>
-            		<a href="#" class="btn btn-outline-primary klik-edit" id="<?php echo $data['id_menu'] ?>" data-toggle="modal" data-target="#modaledit"><i class="fa fa-edit"></i></a>
-                    <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" style="margin-top: 5px;" class="btn btn-outline-danger" href="?/=menu_kuliner&hapus=<?php echo $data['id_menu']."&q=".$data['id_tempat'] ?>"><i class="fa fa-trash"></i></a>
+            		<a href="#" class="btn btn-outline-primary klik-edit" id="<?php echo $data['id_akomodasi'] ?>" data-toggle="modal" data-target="#modaledit"><i class="fa fa-edit"></i></a>
+                    <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" style="margin-top: 5px;" class="btn btn-outline-danger" href="?/=akomodasi&hapus=<?php echo $data['id_akomodasi']."&w=".$data['id_wisata'] ?>"><i class="fa fa-trash"></i></a>
 
 
                     	</td>
@@ -93,7 +100,7 @@ if (isset($_GET['hapus'])) {
 <div class="modal fade" id="modaltambah">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-      <form action="?/=menu_kuliner" method="POST">
+      <form action="?/=akomodasi" method="POST">
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Modal Heading</h4>
@@ -104,24 +111,33 @@ if (isset($_GET['hapus'])) {
         <div class="modal-body">
           <div class="form-row">
             <div class="col-md-6 form-group">
-              <label for="inputID">ID Tempat</label>
-              <input type="text" name="ids" id="inputID" class="form-control" value="<?php echo $id ?>" readonly>
+              <label for="inputID">ID Wisata</label>
+              <input type="text" name="id_wisata" id="inputID" class="form-control" value="<?php echo $id ?>" readonly>
             </div> 
             <div class="col-md-6 form-group">
               
-              <label for="inputK">Kategori</label>
-              <select name="kategori" id="inputK" class="form-control text-center">
-              	<option value="Makanan">Makanan</option>
-              	<option value="Minuman">Minuman</option>
+              <label for="inputK">Titik Awal</label>
+              <select name="titik_awal" id="inputK" class="form-control text-center">
+                <option value="Terminal">Terminal</option>
+                <option value="Stasiun">Stasiun</option>
+                <option value="Bandara">Bandara</option>
               </select>
             </div>
             <div class="col-md-6 form-group">
-              <label for="inputNama">Nama</label>
-              <input type="text" name="nama" id="inputNama" class="form-control">
+              <label for="inputNama">Kendaraan</label>
+              <input type="text" name="kendaraan" id="inputNama" class="form-control">
             </div>
             <div class="col-md-6 form-group">
               <label for="inputH">Harga</label>
               <input type="text" name="harga" id="inputH" class="form-control">
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="inputH">Dari</label>
+              <input type="text" name="dari" id="inputH" class="form-control">
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="inputH">Ke</label>
+              <input type="text" name="ke" id="inputH" class="form-control">
             </div>
           </div>
         </div>
@@ -134,10 +150,10 @@ if (isset($_GET['hapus'])) {
     </div>
   </div>
 
-    <div class="modal fade" id="modaledit">
+   <div class="modal fade" id="modaledit">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-      <form action="?/=menu_kuliner" method="POST">
+      <form action="?/=akomodasi" method="POST">
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Modal Heading</h4>

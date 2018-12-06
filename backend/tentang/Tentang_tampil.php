@@ -10,7 +10,7 @@
               <i class="fas fa-table"></i>
               Data Tentang</div>
             <div class="card-body">
-              <a href="?/=Tentang_input"><button class="btn btn-success"><i class="fa fa-plus"> Tambah</i></button></a>
+              <a href="?/=Tentang_input"><button class="btn btn-secondary"><i class="fa fa-plus"> Tambah</i></button></a>
               <div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -33,8 +33,8 @@
                       <td width=""><?php echo $data['deskripsi'];  ?></td>
 
                       <td style="text-align: center;" width="">
-                        <a href="backend.php?/=Tentang_edit&id=<?php echo $data['id_tentang'];  ?>" class="btn btn-primary" href=""><i class="fa fa-edit">Edit</i></a>
-                        <a style="margin-top: 5px;" class="btn btn-danger" href="backend.php?/=Tentang_hapus&id=<?php echo $data['id_tentang'];  ?>"><i class="fa fa-trash">Hapus</i></a>
+                        <a href="backend.php?/=Tentang_edit&id=<?php echo $data['id_tentang'];  ?>" class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
+                        <a style="margin-top: 5px;" class="btn btn-danger" href="backend.php?/=Tentang_hapus&id=<?php echo $data['id_tentang'];  ?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                  <?php } ?>

@@ -1,25 +1,53 @@
-<?php
-if (isset($_POST['simpan'])) {
-  $nama2 = ucwords($_POST['nama2']); // awal kata huruf kapital
+<?php 
+$id = $_GET['id'];
+$query = mysqli_query($koneksi,"SELECT * FROM event WHERE id_event='$id'");
+$data = mysqli_fetch_array($query);
+
+if (isset($_POST['update'])) {
+  $nama = ucwords($_POST['nama2']); // awal kata huruf kapital
   $tgl = $_POST['tgl'];
-  $lokasi1 = ucwords($_POST['lokasi1']);
+  $lokasi = ucwords($_POST['lokasi1']);
   //gambar profil
-  $gbr = $_FILES['gbr']['name'];
+  $gambar = $_FILES['gbr']['name'];
   $file_tmp = $_FILES['gbr']['tmp_name'];  
-  //gambar_detail
-        move_uploaded_file($file_tmp, "asset/img/event/".$gbr);
+ 
 
-  
-          $query = mysqli_query($koneksi,"INSERT INTO event (nama,tgl_event,lokasi,gambar) VALUES('$nama2','$tgl','$lokasi1','$gbr')");
-        if($query){
-        echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
-        }else{
-          echo 'Gagal Insert';
+    $images = implode(",",$filename);
+
+        move_uploaded_file($file_tmp, "asset/img/gprofil_wisata/".$gambar);
+        if ($gambar =="" && $images== "") {
+          $query3= mysqli_query($koneksi,"UPDATE event SET id_event ='$id', nama ='$nama2', tgl_event='$tgl', lokasi='$lokasi1' WHERE id_event ='$id'");
+            if ($query3) {
+            echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
+            } else {
+              echo "gagal insert";
+            }
+        } else if ($gambar == "") {
+          $query3= mysqli_query($koneksi,"UPDATE event SET id_event ='$id', nama ='$nama2', tgl_event='$tgl', lokasi='$lokasi1' WHERE id_event ='$id'");
+            if ($query3) {
+            echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
+            } else {
+              echo "gagal insert";
+            }
+        } else if ($images =="") {
+          $query3= mysqli_query($koneksi,"UPDATE event SET id_event ='$id', nama ='$nama2', tgl_event='$tgl', lokasi='$lokasi1' WHERE id_event ='$id'");
+            if ($query3) {
+            echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
+            } else {
+              echo "gagal insert";
+            }
+        } else {
+        $query3= mysqli_query($koneksi,"UPDATE event SET id_event ='$id', nama ='$nama2', tgl_event='$tgl', lokasi='$lokasi1' WHERE id_event ='$id'");
+            if ($query3) {
+            echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
+            } else {
+              echo "gagal insert";
+            }
         }
+               
+}
 
-  }
-  ?>
-
+ ?>
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="index.html">Dashboard</a>

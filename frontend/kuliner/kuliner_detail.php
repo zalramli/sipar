@@ -51,14 +51,50 @@ if (isset($_POST['simpan'])) {
           <p class="isi-artikel pt-3 pr-3 pl-3 pb-3"><?php echo $data['deskripsi'] ?></p>
         </div>
         <div role="tab-panel" class="tab-pane" id="profil">
-          <p class="isi-artikel pt-3 pr-3 pl-3 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi vero nihil inventore illum eaque. Tempore soluta magni voluptatum quisquam est molestias earum! Odit, consequuntur doloremque ipsum!</p>
+          <div class="container">
+            <div class="row pt-3">
+              <div class="col-md-6 mb-5">
+                <h5 class="text-center mr-5">Makanan</h5>
+                <?php 
+                $query_makanan = mysqli_query($koneksi,"SELECT * FROM menu_kuliner WHERE id_tempat='$id' AND kategori='Makanan'");
+                foreach ($query_makanan as $data_makanan) {
+                 ?>
+                <div class="row">
+                  <div class="col-md-12 col-xs-12">
+                    <span><?php echo $data_makanan['nama'] ?></span>
+                    <span class="float-right mr-5">Rp <?php echo $data_makanan['harga'] ?></span>
+                      
+                    </div>
+                </div>
+              <?php } ?>
+              </div>
+              <div class="col-md-6 mb-5">
+                <h5 class="text-center mr-5">Minuman</h5>
+                <?php 
+                $query_minuman = mysqli_query($koneksi,"SELECT * FROM menu_kuliner WHERE id_tempat='$id' AND kategori='Minuman'");
+                foreach ($query_minuman as $data_minuman) {
+                 ?>
+                <div class="row">
+                  <div class="col-md-12 col-xs-12">
+                    <span><?php echo $data_minuman['nama'] ?></span>
+                    <span class="float-right mr-5">Rp <?php echo $data_minuman['harga'] ?></span>
+                      
+                    </div>
+                </div>
+              <?php } ?>
+              </div>
+            </div>
+          </div>
         </div>
         <div role="tab-panel" class="tab-pane" id="rating">
           <div class="isi-artikel pt-3 pr-3 pl-3 pb-3">
             <form action="" method="post">
-
+                  <?php 
+                  $query_review = mysqli_query($koneksi,"SELECT * FROM rating_kuliner WHERE id_tempat='$id'");
+                  $jumlah_row = mysqli_num_rows($query_review); 
+                  echo "<h5>Telah di review oleh $jumlah_row Orang</h5>";
+                   ?>
                 <div class="rate">
-                  <h5>*Masukan rating bintang</h5>
                     <div class="star">
                         <input id="rate1-star5" type="radio" name="rate" value="5" />
                         <label for="rate1-star5" title="Excellent">5</label>

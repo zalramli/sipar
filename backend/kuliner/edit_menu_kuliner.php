@@ -7,9 +7,9 @@
 <div class="form-row">
             <div class="col-md-6 form-group">
               <label for="inputID">ID Tempat</label>
-              <input type="hidden" name="id_tempat" id="inputID" class="form-control" value="<?php echo $data['id_tempat'] ?>" readonly>
+              <input type="text" name="id_tempat" id="inputID" class="form-control" value="<?php echo $data['id_tempat'] ?>" readonly>
 
-              <input type="text" name="ids" id="inputID" class="form-control" value="<?php echo $id ?>" readonly>
+              <input type="hidden" name="ids" id="inputID" class="form-control" value="<?php echo $id ?>" readonly>
             </div> 
             <div class="col-md-6 form-group">
               

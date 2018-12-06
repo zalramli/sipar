@@ -10,7 +10,7 @@
               <i class="fas fa-table"></i>
               Data Event</div>
             <div class="card-body">
-              <a href="?/=event_input"><button class="btn btn-outline-success"><i class="fa fa-plus"> Tambah</i></button></a>
+              <a href="?/=event_input"><button class="btn btn-secondary"><i class="fa fa-plus"> Tambah</i></button></a>
               <div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -19,7 +19,8 @@
                       <th>Nama</th>
                       <th>Tanggal</th>
                       <th>Lokasi</th>
-                      <th>gambar</th>
+                      <th>Gambar</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -36,7 +37,7 @@
                       <td width="13%"><?php echo $data['lokasi']; ?></td>
                       <td style="text-align: center;" width="20%"><img style="max-height: 100px; max-width: 100px"; src="asset/img/event/<?php echo $data['gambar']; ?>" alt=""></td>
                       <td style="text-align: center;" width="20%">
-                        <a href="?/=event_edit&id=<?php echo $data['id_event']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
+                        <a href="?/=eventEdit&id=<?php echo $data['id_event']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
                         <a style="margin-top: 5px;" class="btn btn-outline-danger" href=""><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>

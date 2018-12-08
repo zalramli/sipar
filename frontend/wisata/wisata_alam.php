@@ -1,7 +1,12 @@
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
+      <div class="relatif">
       <img src="2.jpg" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="banner-img">
+        <p>Wisata</p>
+      </div>
       <div class="navigasi">
         <a href="?halaman=wisata_alam" class="nav-custActive">Alam</a>
         <a href="?halaman=wisata_buatan" class="nav-cust">Buatan</a>

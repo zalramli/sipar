@@ -66,7 +66,7 @@ if (isset($_POST['simpan'])) {
   </li>
   <li class="breadcrumb-item active">Edit Kuliner</li>
 </ol>  
-<a href="?/=kuliner"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
+<a href="?/=kuliner_tampil"><button class="btn btn-secondary"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
 
 <form action="" method="post" enctype="multipart/form-data"><br>
   <div class="form-row">
@@ -92,7 +92,7 @@ if (isset($_POST['simpan'])) {
     
     <div class="form-group col-md-6">
       <div class="imageupload">
-        <label for="inputText"><b>Gambar Profil</b></label>
+        <label for="inputText"><b>Gambar Profil </b><span style="font-size: 12px; color:red;">*foto 800x600px</span></label>
         
         <div class="file-tab panel-body">
           <div class="btn btn-warning btn-file">
@@ -106,7 +106,7 @@ if (isset($_POST['simpan'])) {
   </div>
   <div class="form-row">
     <div class="form-group col-md-12">
-      <label for="inputText"><b>Gambar Detail</b><h6 style="font-size: 12px; color:red;">*minimal 5 foto</h6></label>
+      <label for="inputText"><b>Gambar Detail</b><h6 style="font-size: 12px; color:red;">*minimal 6 foto 800x600px</h6></label>
       <input class="form-control" name="upload[]" id="fileupload" type="file" multiple="multiple" />
       <br>
       <div id="dvPreview">

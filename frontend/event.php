@@ -1,12 +1,64 @@
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
-      <div class="event-cover">
-      <img src="event2.png" class="img-fluid" alt="Responsive image">
+      <div class="relatif">
+        <img src="asset/img/gdetail_kuliner/bridge.jpg" width="100%" height="498px" alt="Responsive image">
+      </div>
+      <div class="banner-img">
+        <p>Event</p>
+      </div>
     </div>
-    <div class="event-caption">
-      <p>Event</p>
+  </div>
+</div>
+<div class="container-fluid jarak-section">
+  <div class="row">
+    <div class="col-md-12">
+      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: black" href="">Event</a>
     </div>
+  </div>
+</div>
+<div class="container jarak-mb5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="relatif">
+            <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest1">
+            <div class="banner-event"><h5 class="text-center text-white">JFC</h5></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <div class="relatif">
+                <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest2">
+                <div class="banner-event"><h5 class="text-center text-white">JFC</h5></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="relatif">
+                <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest3">
+                <div class="banner-event2"><h6 class="text-center text-white">JFC</h6></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="relatif">
+                <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest3">
+                <div class="banner-event2"><h6 class="text-center text-white">JFC</h6></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container jarak-section text-center">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Event 2017</h3>
     </div>
   </div>
 </div>
@@ -25,28 +77,7 @@
       </div>
     </div>
   </div> -->
-  <div class="container jarak-content">
-    <div class="row">
-      <div style="" class="col-md-6">
-        <div class="">
-          <img style="height: 46%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-12" style="background: black">
-            <img style="height: 50%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
-          </div>
-          <div class="col-md-12" style="background-color: black">
-            <div>
-          <img style="height: 5%; width: 100%" src="asset/img/gdetail_wisata/bridge.jpg" alt="">
-        </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container jarak-content">
+  <div class="container jarak-section">
     <div class="row bungkus-tgl">
       <?php
       $bln = [1,2,3,4,5,6,7,8,9,10,11,12];
@@ -54,9 +85,8 @@
       $active = ($i." ".date("Y")==date("m Y")) ? "class='active'" : "";
       echo "<div class='col-lg-1'><a $active href='?halaman=event&$bulan[$i]'>$bulan[$i]</a></div>";
       if (isset($GET[$bulan[$i]])) {
-        
+      
       }
-
       }
       ?>
     </div>
@@ -65,68 +95,26 @@
 <div class="container jarak-mb5 card-event">
   <div class="transisi-galery">
     <div class="row">
-      <div class="col-md-4 jarak-section">
-        <div class="card">
-          <a class="lightbox" href="event.jpg">
-            <img src="event.jpg" alt="Card Image" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title text-center">Go Ride</h5>
-            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit perspiciatis molestias aut rerum, libero, inventore corrupti labore at nam!</p> -->
+      <div class="col-md-12">
+        <?php
+        $query = mysqli_query($koneksi,"SELECT * FROM event");
+        foreach ($query as $data) {
+        ?>
+        <div class="row">
+          <div class="col-md-4 jarak-section">
+            <a style="text-decoration: none; color: black" class="lightbox" href="event.jpg">
+              <div class="card">
+                <img src="event.jpg" alt="Card Image" class="img-event">
+                <div class="card-body">
+                  <h5 class="card-title text-center"><?php echo $data['nama'] ?></h5>
+                  <p>Lokasi &nbsp&nbsp: <?php echo $data['lokasi'] ?></p>
+                  <p>Tanggal : <?php echo date('d M Y',strtotime($data['tgl_event'])) ?></p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-        
-      </div>
-      <div class="col-md-4 jarak-section">
-        
-        <div class="card">
-          <a class="lightbox" href="event.jpg">
-            <img src="event.jpg" alt="Card Image" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title text-center">Go Ride</h5>
-            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit perspiciatis molestias aut rerum, libero, inventore corrupti labore at nam!</p> -->
-          </div>
-        </div>
-        
-      </div>
-      <div class="col-md-4 jarak-section">
-        
-        <div class="card">
-          <a class="lightbox" href="event.jpg">
-            <img src="event.jpg" alt="Card Image" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title text-center">Go Ride</h5>
-            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit perspiciatis molestias aut rerum, libero, inventore corrupti labore at nam!</p> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 jarak-section">
-        
-        <div class="card">
-          <a class="lightbox" href="event.jpg">
-            <img src="event.jpg" alt="Card Image" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title text-center">Go Ride</h5>
-            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit perspiciatis molestias aut rerum, libero, inventore corrupti labore at nam!</p> -->
-          </div>
-        </div>
-        
-      </div>
-      <div class="col-md-4 jarak-section">
-        
-        <div class="card">
-          <a class="lightbox" href="event.jpg">
-            <img src="event.jpg" alt="Card Image" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title text-center">Go Ride</h5>
-            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit perspiciatis molestias aut rerum, libero, inventore corrupti labore at nam!</p> -->
-          </div>
-        </div>
-        
+        <?php } ?>
       </div>
     </div>
   </div>

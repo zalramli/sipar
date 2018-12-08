@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['simpan'])) {
+  $id_event = $_POST['id_event'];
   $nama2 = ucwords($_POST['nama2']); // awal kata huruf kapital
   $tgl = $_POST['tgl'];
   $lokasi1 = ucwords($_POST['lokasi1']);
@@ -8,9 +9,7 @@ if (isset($_POST['simpan'])) {
   $file_tmp = $_FILES['gbr']['tmp_name'];  
   //gambar_detail
         move_uploaded_file($file_tmp, "asset/img/event/".$gbr);
-
-  
-          $query = mysqli_query($koneksi,"INSERT INTO event (nama,tgl_event,lokasi,gambar) VALUES('$nama2','$tgl','$lokasi1','$gbr')");
+          $query = mysqli_query($koneksi,"INSERT INTO event VALUES('$id_event','$nama2','$tgl','$lokasi1','$gbr')");
         if($query){
         echo "<script>window.location = 'backend.php?/=event_tampil'</script>";
         }else{
@@ -31,7 +30,8 @@ if (isset($_POST['simpan'])) {
 <form action="" method="post" enctype="multipart/form-data"><br>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputText"><b>nama event</b></label>
+      <label for="inputText"><b>Nama Event</b></label>
+      <input type="hidden" name="id_event" value="<?php echo kode('id_event','event',3,'E') ?>">
       <input type="text" name="nama2" class="form-control" id="inputText" placeholder="Masukan nama">
     </div>
     <div class="form-group col-md-6">
@@ -47,7 +47,7 @@ if (isset($_POST['simpan'])) {
     
     <div class="form-group col-md-6">
       <div class="imageupload">
-        <label for="inputText"><b>Gambar Profil</b></label>
+        <label for="inputText"><b>Gambar Profil </b><span style="font-size: 12px; color:red;">*foto 800x600px</span></label>
         
         <div class="file-tab panel-body">
           <div class="btn btn-warning btn-file">

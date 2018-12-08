@@ -22,7 +22,7 @@ $query = mysqli_query($koneksi,"INSERT INTO jadwal_transportasi VALUES ('','$ide
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputText"><b>Nama Kendaraan</b></label>
-      <input type="text" name="ide" class="form-control" id="inputText" placeholder="masukan nama kendaraan">
+      <input type="text" name="ide" class="form-control" id="inputText" placeholder="Masukan nama kendaraan">
     </div>
     <div class="form-group col-md-4">
       <label for="inputText"><b>Dari</b></label>

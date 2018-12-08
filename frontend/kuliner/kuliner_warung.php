@@ -1,7 +1,12 @@
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
+      <div class="relatif">
       <img src="2.jpg" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="banner-img">
+        <p>Kuliner</p>
+      </div>
       <div class="navigasi">
         <a href="?halaman=kuliner_cafe" class="nav-cust">Cafe</a>
         <a href="?halaman=kuliner_warung" class="nav-custActive">Warung</a>

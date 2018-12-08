@@ -18,7 +18,8 @@
   <body>
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="jarak-nav"> 
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
       <a class="navbar-brand ml-5" href="index.php">
         <img src="asset/img/logo.png" width="140" height="50" class="d-inline-block align-top" alt="">
       </a>
@@ -40,7 +41,10 @@
             <a class="nav-link" href="?halaman=kuliner_cafe">Kuliner</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?halaman">Transportasi</a>
+            <a class="nav-link" href="?halaman=cindramata">Cindramata</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?halaman=paket_wisata">Paket Wisata</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?halaman=bantuan">Bantuan</a>
@@ -48,6 +52,7 @@
         </ul>
       </div>
     </nav>
+    </div>
     <!-- Tutup Navbar -->
     <a onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></a>
     <?php if(!isset($_GET['halaman'])){
@@ -179,8 +184,12 @@
           <h2 id="sr">Paket Wisata</h2>
         </div>
         <div class="transisi-galery">
+          <?php   
+            $paket_wisata = mysqli_query($koneksi3,"SELECT * FROM paket_wisata");
+            foreach ($paket_wisata as $key_paket) {
+           ?>
           <div class="row">
-            <div class="col-md-6 col-lg">
+            <div class="col-md-6 col-lg-3">
               <div id="sr" class="card border-0 transform-on-hover">
                 <a class="lightbox" href="img/image1.jpg">
                   <div class="foto-paket">
@@ -188,56 +197,9 @@
                   </div>
                 </a>
                 <div class="card-body">
-                  <h6><a href="#">Lorem Ipsum</a></h6>
-                  <p class="text-muted card-text ">Mulai dari </p>
-                </div>
-                <div class="card-footer text-center text-white">
-                  <a href="asd" class="book-now btn-block">Booking Detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg">
-              <div id="sr" class="card border-0 transform-on-hover">
-                <a class="lightbox" href="img/image2.jpg">
-                  <div class="foto-paket">
-                    <img src="img/image2.jpg" alt="Card Image" class="card-img-top">
-                  </div>
-                </a>
-                <div class="card-body">
-                  <h6><a href="#">Lorem Ipsum</a></h6>
-                  <p class="text-muted card-text">Mulai dari</p>
-                </div>
-                <div class="card-footer text-center text-white">
-                  <a href="asd" class="book-now btn-block">Booking Detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg">
-              <div id="sr" class="card border-0 transform-on-hover">
-                <a class="lightbox" href="img/image3.jpg">
-                  <div class="foto-paket">
-                    <img src="img/image3.jpg" alt="Card Image" class="card-img-top">
-                  </div>
-                </a>
-                <div class="card-body">
-                  <h6><a href="#">Lorem Ipsum</a></h6>
-                  <p class="text-muted card-text">Mulai dari</p>
-                </div>
-                <div class="card-footer text-center text-white">
-                  <a href="asd" class="book-now btn-block">Booking Detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg">
-              <div id="sr" class="card border-0 transform-on-hover">
-                <a class="lightbox" href="img/image4.jpg">
-                  <div class="foto-paket">
-                    <img src="img/image4.jpg" alt="Card Image" class="card-img-top">
-                  </div>
-                </a>
-                <div class="card-body">
-                  <h6><a href="#">Lorem Ipsum</a></h6>
-                  <p class="text-muted card-text">Mulai dari</p>
+                  <h6><a href="#"><?php echo $key_paket['nama'] ?></a></h6>
+                  <span class="text-muted card-text ">Mulai dari </span>
+                  <span class="float-right"><?php echo $key_paket['harga']; ?></span>
                 </div>
                 <div class="card-footer text-center text-white">
                   <a href="asd" class="book-now btn-block">Booking Detail</a>
@@ -245,10 +207,11 @@
               </div>
             </div>
           </div>
+        <?php   } ?>
           <div class="container">
             <div class="row">
               <div class="ml-auto mt-3">
-                <a href="">Paket Wisata Detail <i class="fas fa-arrow-right"></i></a>
+                <a href="?halaman=paket_wisata">Paket Wisata Detail <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>

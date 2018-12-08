@@ -25,12 +25,13 @@
                   </thead>
                   <tbody>
                     <?php
+                    $no=1;
                     $query = mysqli_query($koneksi,"SELECT * FROM jadwal_transportasi"); 
                     foreach ($query as $data) {
                      ?>                
                     
                     <tr>
-                      <td width=""><?php echo $data['id_jadwal']; ?></td>
+                      <td width=""><?php echo $no++; ?></td>
                       <td width=""><?php echo $data['nama_kendaraan']; ?></td>
                       <td width=""><?php echo $data['dari']; ?></td>
                       <td width=""><?php echo $data['sampai']; ?></td>

@@ -23,7 +23,7 @@ if($query){
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>nama</b></label>
-      <input type="text" name="nama1" class="form-control" id="inputText" placeholder="masukan nama anda">
+      <input type="text" name="nama1" class="form-control" id="inputText" placeholder="masukan nama anda" required="">
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>email</b></label>

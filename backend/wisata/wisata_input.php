@@ -47,11 +47,11 @@ if (isset($_POST['simpan'])) {
     <div class="form-group col-md-6">
       <label for="inputText"><b>Nama</b></label>
       <input type="hidden" name="id" value="<?php echo kode('id_wisata','wisata',3,'W') ?>">
-      <input type="text" name="nama" class="form-control" id="inputText" placeholder="Masukan nama">
+      <input type="text" name="nama" class="form-control" id="inputText" placeholder="Masukan nama" required >
     </div>
     <div class="form-group col-md-6">
       <label for="inputState"><b>Kategori Wisata</b></label>
-      <select id="inputState" name="kategori" class="form-control">
+      <select id="inputState" name="kategori" class="form-control" required >
         <?php
         $query = mysqli_query($koneksi,"SELECT * FROM kategori_wisata ORDER BY id_kategoriWisata ASC");
         foreach ($query as $data) {

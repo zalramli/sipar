@@ -27,13 +27,13 @@ if($query){
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>email</b></label>
-      <input type="text" name="email" class="form-control" id="inputText" placeholder="">
+      <input type="text" name="email" class="form-control" id="inputText" placeholder="" required >
     </div>
   </div>
     <div class="form-row">
     <div class="form-group col-md-12">
       <label for="inputText"><b>Deskripsi</b></label>
-      <textarea class="form-control" name="des" placeholder="Masukan deskripsi . . . . " id="exampleFormControlTextarea1" rows="7"></textarea>
+      <textarea class="form-control" name="des" placeholder="Masukan deskripsi . . . . " id="exampleFormControlTextarea1" rows="7" required ></textarea>
     </div>
   </div>
   

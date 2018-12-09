@@ -32,7 +32,7 @@ if (isset($_POST['simpan'])) {
     <div class="form-group col-md-6">
       <label for="inputText"><b>Nama Event</b></label>
       <input type="hidden" name="id_event" value="<?php echo kode('id_event','event',3,'E') ?>">
-      <input type="text" name="nama2" class="form-control" id="inputText" placeholder="Masukan nama">
+      <input type="text" name="nama2" class="form-control" id="inputText" placeholder="Masukan nama" required >
     </div>
     <div class="form-group col-md-6">
          <label for="inputText"><b>Tanggal Event</b></label>
@@ -42,7 +42,7 @@ if (isset($_POST['simpan'])) {
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>Lokasi</b></label>
-      <input type="text" name="lokasi1" class="form-control" id="inputText" placeholder="Masukan lokasi">
+      <input type="text" name="lokasi1" class="form-control" id="inputText" placeholder="Masukan lokasi" required >
     </div>
     
     <div class="form-group col-md-6">

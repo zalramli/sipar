@@ -28,7 +28,7 @@ echo 'Gagal Insert';
     <div class="form-group col-md-6">
       <label for="inputText"><b>Nama Paket</b></label>
       <input type="hidden" name="id_paket" value="<?php echo kode('id_paket','paket_wisata',3,'PW') ?>">
-      <input type="text" name="nama" class="form-control" id="inputText" placeholder="Masukan nama">
+      <input type="text" name="nama" class="form-control" id="inputText" placeholder="Masukan nama" required >
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>Tanggal Event</b></label>

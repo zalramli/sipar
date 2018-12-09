@@ -25,7 +25,7 @@ $query = mysqli_query($koneksi,"INSERT INTO user VALUES ('','$user1','$psw')");
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputText"><b>Username</b></label>
-      <input type="text" name="user1" class="form-control" id="inputText" placeholder="masukan nama kendaraan"required >
+      <input type="text" name="user1" class="form-control" id="inputText" placeholder="masukan nama kendaraan" required >
     </div>
     <div class="form-group col-md-4">
       <label for="inputText"><b>Password</b></label>

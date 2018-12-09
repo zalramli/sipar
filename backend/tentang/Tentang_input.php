@@ -23,11 +23,11 @@ if (isset($_POST['simpan'])){
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>Nama</b></label>
-      <input type="text" name="tentang" class="form-control" id="inputText">
+      <input type="text" name="tentang" class="form-control" id="inputText" required >
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>Deskripsi</b></label>
-      <input type="text" name="deskrip" class="form-control" id="inputText" placeholder="Masukan kategori wisata">
+      <input type="text" name="deskrip" class="form-control" id="inputText" placeholder="Masukan kategori wisata" required >
     </div>
   </div>
     

@@ -29,7 +29,7 @@ if (isset($_POST['simpan'])) {
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kategori Wisata</b></label>
-      <input type="text" name="kategori" class="form-control" id="inputText" placeholder="Masukan kategori wisata">
+      <input type="text" name="kategori" class="form-control" id="inputText" placeholder="Masukan kategori wisata" required >
     </div>
   </div>
     

@@ -24,6 +24,16 @@
       <i class="fas fa-bars"></i>
       </button>
       <!-- Navbar Search -->
+            <?php 
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+      header("location:login1.php");
+  # code...
+}
+?>
+
     </nav>
     <div id="wrapper">
       <!-- Sidebar -->
@@ -79,7 +89,11 @@
                       <i class="fas fa-fw fa-chart-area"></i>
                       <span>XKategori</span></a>
                     </li>
-                    
+                     <li class="nav-item">
+                    <a class="nav-link" href="logout.php">
+                      <i class="fas fa-fw fa-chart-area"></i>
+                      <span>Logout</span></a>
+                    </li>
                   </ul>
                   <div id="content-wrapper">
                     <div class="container-fluid">

@@ -5,8 +5,8 @@ if (isset($_POST['simpan'])) {
   $titik_awal = $_POST['titik_awal'];
   $kendaraan = $_POST['kendaraan'];
   $harga = $_POST['harga'];
-  $dari = $_POST['dari'];
-  $ke = $_POST['ke'];
+  $dari = ucwords($_POST['dari']);
+  $ke = ucwords($_POST['ke']);
   $query = mysqli_query($koneksi,"INSERT INTO akomodasi VALUES ('','$id_wisata','$titik_awal','$kendaraan','$harga','$dari','$ke')");
   if ($query) {
             echo "<script>window.location = 'backend.php?/=akomodasi&id=$id_wisata'</script>";
@@ -18,8 +18,8 @@ if (isset($_POST['edit'])) {
   $titik_awal = $_POST['titik_awal'];
   $kendaraan = $_POST['kendaraan'];
   $harga = $_POST['harga'];
-  $dari = $_POST['dari'];
-  $ke = $_POST['ke'];
+  $dari = ucwords($_POST['dari']);
+  $ke = ucwords($_POST['ke']);
   $query_edit = mysqli_query($koneksi,"UPDATE akomodasi SET titik_awal='$titik_awal',kendaraan='$kendaraan',harga='$harga',dari='$dari',ke='$ke' WHERE id_akomodasi='$ids'");
   if ($query_edit) {
             echo "<script>window.location = 'backend.php?/=akomodasi&id=$id_wisata'</script>";

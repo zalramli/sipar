@@ -10,6 +10,23 @@ echo "<script>window.location = '?halaman=wisata_detail&id=$id'</script>";
 }
 }
 ?>
+
+<script src="backend/template/js/ajax.js"></script>
+<script type="text/javascript">
+    $(document).on('change', '#xx', function(event){
+            event.preventDefault();
+            var form_data = $("#myform").serialize();
+            $.ajax({
+            url: "frontend/wisata/ambil_akomodasi.php",
+                method:"POST",
+                data:form_data,
+                success:function(data){
+                    $("#muncul").html(data);
+                }
+            });
+        });
+        // mengambil total harga
+</script> 
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
@@ -53,20 +70,22 @@ echo "<script>window.location = '?halaman=wisata_detail&id=$id'</script>";
             <div class="row">
                 <div class="col-md-6 form-group">
               <label for="inputNama"></label>
-              <select name="" id="" class="form-control">
-                <option value="">Terminal</option>
-                <option value="">Stasiun</option>
-                <option value="">Bandara</option>
+              <form action="" method="post" id="myform">
+              <input type="hidden" name="id_wisatas" value="<?php echo $id ?>">
+              <select name="akomodasi" id="xx" class="form-control">
+                <option value="">Pilih Titik Awal</option>
+                <option value="Terminal">Terminal</option>
+                <option value="Stasiun">Stasiun</option>
+                <option value="Bandara">Bandara</option>
               </select>
+              </form>
+                  
             </div>
             </div>
+            <div id="muncul" class="mt-4">
+                    
+                  </div>
           </div>
-          <?php
-          $query_akomodasi = mysqli_query($koneksi,"SELECT * FROM akomodasi WHERE id_wisata='$id'");
-          foreach ($query_akomodasi as $data2) {
-          ?>
-          <p class="pt-3 pr-3 pl-3 pb-3"><?php echo $data2['titik_awal'] ?></p>
-        <?php } ?>
         </div>
         <div role="tab-panel" class="tab-pane" id="rating">
           <div class="isi-artikel pt-3 pr-3 pl-3 pb-3">

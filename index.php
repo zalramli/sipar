@@ -107,7 +107,7 @@
         <div class="row">
           <?php
           $koneksi3 = mysqli_connect("localhost","root","","db_wisata");
-          $query = mysqli_query($koneksi3,"SELECT wisata.nama,wisata.lokasi,wisata.gambar_profil,wisata.id_wisata,kategori_wisata.nama_kategori,wisata.deskripsi, ROUND(AVG(rating_wisata.rating)) AS ratings FROM wisata  JOIN kategori_wisata ON wisata.id_kategoriWisata=kategori_wisata.id_kategoriWisata LEFT JOIN rating_wisata ON wisata.id_wisata = rating_wisata.id_wisata GROUP BY wisata.id_wisata HAVING ROUND(AVG(rating_wisata.rating)) <= 5 limit 6");
+          $query = mysqli_query($koneksi3,"SELECT wisata.nama,wisata.lokasi,wisata.gambar_profil,wisata.id_wisata,kategori_wisata.nama_kategori,wisata.deskripsi, ROUND(AVG(rating_wisata.rating)) AS ratings FROM wisata  JOIN kategori_wisata ON wisata.id_kategoriWisata=kategori_wisata.id_kategoriWisata LEFT JOIN rating_wisata ON wisata.id_wisata = rating_wisata.id_wisata GROUP BY wisata.id_wisata HAVING ROUND(AVG(rating_wisata.rating)) <= 5 limit 9");
           foreach ($query as $data) {
           ?>
           <div class="col-md-6 col-lg-4">
@@ -129,30 +129,6 @@
       </div>
     </section>
     <!-- tutup destinasi -->
-    <div class="cust1">
-      <div class="jumbotron">
-        <h2 class="text-center"></h2>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="parallax-img">
-                <img src="parallax/gojek.png" alt="">
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="parallax-img">
-                <img src="parallax/gojek.png" alt="">
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="parallax-img">
-                <img src="parallax/gojek.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <section class="gallery-block compact-gallery jarak-content">
       <div class="container">
         <div class="judul">

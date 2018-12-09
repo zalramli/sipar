@@ -3,9 +3,11 @@
     <div class="col-md-12">
       <div class="relatif">
         <img src="asset/img/gdetail_kuliner/bridge.jpg" width="100%" height="498px" alt="Responsive image">
+            <div class="bg-black"></div>
+        
       </div>
       <div class="banner-img">
-        <p>Event</p>
+        <p>Paket Wisata</p>
       </div>
     </div>
   </div>
@@ -35,7 +37,7 @@
                   <h5 class="card-title"><?php echo $data['nama'] ?></h5>
                   <p> Deskripsi .... </p>
                   <div class="float-right mt-2">
-                    <a style="color:#D5347D" href="">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a style="color:#D5347D;text-decoration: none;" href="">Read More <i class="fas fa-arrow-right"></i></a>
                   </div>
                 </div>
               </div>

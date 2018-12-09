@@ -269,6 +269,7 @@ a.card-link:hover {
 }
 */
 
+
 /*Manggil destinasi wisata*/
 .gallery-block.destinasi-wisata h6 {
     font-size: 17px;
@@ -326,8 +327,8 @@ a.card-link:hover {
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
     }
 }
-
 /*tutup destinasi wisata*/
+
 
 /*Kuliner Khas Jember*/
 .gallery-block.compact-gallery .item {
@@ -632,7 +633,6 @@ input:checked~label:hover~label {
     border: 2px solid white;
     background-color: transparent;
     text-shadow: 3px 3px 3px black;
-
 }
 .banner-img p{
     text-align: center;
@@ -660,12 +660,60 @@ input:checked~label:hover~label {
 .relatif{
     position: relative;
 }
+.relatif-event{
+    position: relative;
+}
+.event-deskripsi{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+    padding-top: 475px;
+    padding-left: 20px;
+}
+.event-deskripsi2{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+    padding-top: 200px;
+    padding-left: 20px;
+}
+
+.relatif-event:hover .event-deskripsi{
+    visibility: visible;
+    opacity: 1;
+}
+.relatif-event:hover .event-deskripsi2{
+    visibility: visible;
+    opacity: 1;
+}
+.judul-events{
+    overflow: hidden;
+}
+.judul-events:hover{
+    position:0;
+    font-size: 20px; 
+}
 .banner-event{
     position: absolute;
     top: 0;
     background-color: black;
     margin-top: 30px;
     width: 200px;
+    z-index: 99999;
 }
 .banner-event2{
     position: absolute;
@@ -674,4 +722,11 @@ input:checked~label:hover~label {
     margin-top: 30px;
     width: 150px;
 }
-
+.bg-black{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

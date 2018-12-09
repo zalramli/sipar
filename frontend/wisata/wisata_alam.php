@@ -3,6 +3,7 @@
     <div class="col-md-12">
       <div class="relatif">
       <img src="2.jpg" class="img-fluid" alt="Responsive image">
+            <div class="bg-black"></div>
       </div>
       <div class="banner-img">
         <p>Wisata</p>

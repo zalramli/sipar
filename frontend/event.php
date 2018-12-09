@@ -3,6 +3,7 @@
     <div class="col-md-12">
       <div class="relatif">
         <img src="asset/img/gdetail_kuliner/bridge.jpg" width="100%" height="498px" alt="Responsive image">
+            <div class="bg-black"></div>
       </div>
       <div class="banner-img">
         <p>Event</p>
@@ -22,31 +23,36 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-6">
-          <div class="relatif">
+          <div class="relatif-event">
             <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest1">
-            <div class="banner-event"><h5 class="text-center text-white">JFC</h5></div>
+            <div class="banner-event">
+              <h5 class="text-center text-white">JFC</h5>
+            </div>
+            <div class="event-deskripsi">
+              <h3>15 Desember 2018</h3>
+            </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-12 mb-4">
-              <div class="relatif">
+              <div class="relatif-event">
                 <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest2">
                 <div class="banner-event"><h5 class="text-center text-white">JFC</h5></div>
+                <div class="event-deskripsi2">
+              <h3>15 Desember 2018</h3>
+            </div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
-              <div class="relatif">
-                <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest3">
-                <div class="banner-event2"><h6 class="text-center text-white">JFC</h6></div>
-              </div>
+            <div class="col-md-12">
+              <div class="relatif-event">
+                <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest2">
+                <div class="banner-event"><h5 class="text-center text-white">JFC</h5></div>
+                <div class="event-deskripsi2">
+              <h3>15 Desember 2018</h3>
             </div>
-            <div class="col-md-6">
-              <div class="relatif">
-                <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest3">
-                <div class="banner-event2"><h6 class="text-center text-white">JFC</h6></div>
               </div>
             </div>
           </div>

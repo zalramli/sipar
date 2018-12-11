@@ -12,23 +12,19 @@ if (isset($_POST['simpan'])) {
   }
 }
 ?>
-<div class="container-fluid jarak-section">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="container-gambar">
-        <img src="1.jpg" class="img-fluid" alt="Responsive image">
-        <div class="text-block">
-          <h4>Cafe Kalong</h4>
-          <p>What a beautiful sunrise</p>
-        </div>
-      </div>
+<div class="wrap mb-4">
+    <div class="relatif">
+          <img src="1.jpg" class="img-fluid" alt="Responsive image">
+          <div class="text-block">
+            <h4><?php echo $data['nama'] ?></h4>
+            <p>What a beautiful sunrise </p>
+          </div>
     </div>
   </div>
-</div>
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
-      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: gray" href="?halaman=kuliner_<?php echo strtolower($data['nama_kategori']) ?>">Kuliner <?php echo $data['nama_kategori'] ?></a> <b> > </b> <a style="color: black" href=""><?php echo $data['nama'] ?></a>
+      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: gray" href="?halaman=kuliner&kategori=<?php echo strtolower($data['nama_kategori']) ?>">Kuliner <?php echo $data['nama_kategori'] ?></a> <b> > </b> <a style="color: black" href=""><?php echo $data['nama'] ?></a>
     </div>
   </div>
 </div>
@@ -144,11 +140,15 @@ if (isset($_POST['simpan'])) {
           </div>
           <div class="row">
             <div class="col-md-4">
-              <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <iframe src="<?php echo $data['lokasi'] ?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
 </div>

@@ -29,25 +29,47 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0 mr-5">
           <li class="nav-item">
-            <a class="nav-link active" href="index.php">Home</a>
+            <a <?php if(empty($_GET)) {echo 'class="nav-link"';} 
+            else {echo 'class="nav-link"';} ?>
+             href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?halaman=wisata_alam">Wisata</a>
+            <a <?php if(!$_GET) {echo 'class="nav-link"';} 
+            else if ($_GET['halaman'] == "wisata") {echo 'class="nav-link active"';} 
+            else if ($_GET['halaman'] == "wisata_detail") {echo 'class="nav-link active"';} 
+            else {echo 'class="nav-link"';} ?>
+             href="?halaman=wisata&kategori=alam">Wisata</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?halaman=event">Event</a>
+            <a <?php if(!$_GET) {echo 'class="nav-link"';} 
+            else if ($_GET['halaman'] == "event") {echo 'class="nav-link active"';} 
+            else {echo 'class="nav-link"';} ?> 
+            href="?halaman=event">Event</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?halaman=kuliner_cafe">Kuliner</a>
+            <a <?php if(!$_GET) {echo 'class="nav-link"';} 
+            else if ($_GET['halaman'] == "kuliner") {echo 'class="nav-link active"';} 
+            else if ($_GET['halaman'] == "kuliner_detail") {echo 'class="nav-link active"';} 
+            else {echo 'class="nav-link"';} ?>
+             href="?halaman=kuliner&kategori=cafe">Kuliner</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?halaman=cindramata">Cindramata</a>
+            <a <?php if(!$_GET) {echo 'class="nav-link"';} 
+            else if ($_GET['halaman'] == "cindramata") {echo 'class="nav-link active"';} 
+            else {echo 'class="nav-link"';} ?> 
+            href="?halaman=cindramata">Cindramata</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?halaman=paket_wisata">Paket Wisata</a>
+            <a <?php if(!$_GET) {echo 'class="nav-link"';} 
+            else if ($_GET['halaman'] == "paket_wisata") {echo 'class="nav-link active"';} 
+            else {echo 'class="nav-link"';} ?> 
+            href="?halaman=paket_wisata">Paket Wisata</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?halaman=bantuan">Bantuan</a>
+            <a <?php if(!$_GET) {echo 'class="nav-link"';} 
+            else if ($_GET['halaman'] == "bantuan") {echo 'class="nav-link active"';} 
+            else {echo 'class="nav-link"';} ?>
+             href="?halaman=bantuan">Bantuan</a>
           </li>
         </ul>
       </div>

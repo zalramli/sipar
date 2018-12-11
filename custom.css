@@ -1,6 +1,11 @@
 body {
     background: #F7F7F7;
 }
+.wrap{
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
 
 #main {
     margin-top: -1px;
@@ -468,7 +473,7 @@ a.card-link:hover {
     -o-transform: translateX(50%);
     -moz-transform: translateX(50%);
     position: absolute;
-    height: 100px;
+    height: 160px;
 }
 
 .nav-custActive {
@@ -621,7 +626,6 @@ input:checked~label:hover~label {
     text-decoration: none;
     color: black;
 }
-
 .banner-img{
     position: absolute;
     top: 0;
@@ -629,7 +633,7 @@ input:checked~label:hover~label {
     width: 30%;
     height: 20%;
     margin-left: 35%;
-    margin-top: 10%;
+    margin-top: 15%;
     border: 2px solid white;
     background-color: transparent;
     text-shadow: 3px 3px 3px black;
@@ -637,8 +641,8 @@ input:checked~label:hover~label {
 .banner-img p{
     text-align: center;
     color: white;
-    margin: 5%;
-    font-size: 30px;
+    margin: 8%;
+    font-size: 35px;
     text-shadow: 1px 1px 1px black;
 }
 .img-event{
@@ -713,7 +717,7 @@ input:checked~label:hover~label {
     background-color: black;
     margin-top: 30px;
     width: 200px;
-    z-index: 99999;
+    z-index: 10;
 }
 .banner-event2{
     position: absolute;

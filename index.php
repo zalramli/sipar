@@ -252,8 +252,17 @@
             <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
           </div>
           <div class="col-md-3 mx-auto">
-            <h6 class="text-white">PENGUNJUNG</h6>
-            <hr class="d-inline-block">
+             <?php 
+            $filecounter=("pengunjung.txt");
+            $kunjungan=file($filecounter);
+            $kunjungan[0]++;
+            $file=fopen($filecounter,"w");
+            fputs($file,"$kunjungan[0]");
+            fclose($file);
+            ?>
+                <h6 class="text-white">PENGUNJUNG : <?php echo $kunjungan[0] ?> </h6>
+                
+            </div>
           </div>
         </div>
       </div>

@@ -33,9 +33,9 @@
                       <td width=""><?php echo $data['deskripsi'];  ?></td>
 
                       <td style="text-align: center;" width="">
-                        <a href="backend.php?/=Tentang_edit&id=<?php echo $data['id_tentang'];  ?>" class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
-                        <a style="margin-top: 5px;" class="btn btn-danger" href="backend.php?/=Tentang_hapus&id=<?php echo $data['id_tentang'];  ?>"><i class="fa fa-trash"></i></a>
-                      </td>
+                        <a href="backend.php?/=Tentang_edit&id=<?php echo $data['id_tentang'];  ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-outline-danger" href="backend.php?/=Tentang_hapus&id=<?php echo $data['id_tentang'];  ?>"><i class="fa fa-trash"></i></a>
+                      </td> 
                     </tr>
                  <?php } ?>
                   </tbody>

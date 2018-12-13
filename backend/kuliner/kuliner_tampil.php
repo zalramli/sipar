@@ -48,9 +48,9 @@ if ($query) {
                       <td width="20%"><img width="245" height="150" src="asset/img/gprofil_kuliner/<?php echo $data['gambar_profil'] ?>" alt=""></td>
                       <td width="25%"><?php echo substr($data['deskripsi'],0,40)." ..."; ?></td>
                       <td style="text-align: center;" width="20%">
+                        <a class="btn btn-outline-secondary" href="?/=menu_kuliner&id=<?php echo $data['id_tempat']; ?>"><i class="fa fa-utensils"></i></a>
                         <a href="?/=kuliner_edit&id=<?php echo $data['id_tempat']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
-                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" style="margin-top: 5px;" class="btn btn-outline-danger" href="?/=kuliner_tampil&hapus=<?php echo $data['id_tempat'] ?>"><i class="fa fa-trash"></i></a>
-                        <a style="margin-top: 5px;" class="btn btn-secondary" href="?/=menu_kuliner&id=<?php echo $data['id_tempat']; ?>">daftar menu</a>
+                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" class="btn btn-outline-danger" href="?/=kuliner_tampil&hapus=<?php echo $data['id_tempat'] ?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php 

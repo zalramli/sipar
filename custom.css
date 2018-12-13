@@ -49,10 +49,12 @@ body {
 
 .navbar-light .navbar-nav .nav-link {
     color: black;
-    font-family: ubuntu;
-    font-size: 18px;
+    font-family: Arial;
+    font-weight: bold; 
+    font-size: 13px;
+    text-transform: uppercase;
     text-align: center;
-    margin: 5px;
+    margin: 3px;
 }
 
 .navbar-light ul a:hover {

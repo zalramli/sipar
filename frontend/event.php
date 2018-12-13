@@ -1,6 +1,6 @@
 <div class="wrap mb-4">
       <div class="relatif">
-        <img src="asset/img/gdetail_kuliner/bridge.jpg" width="100%" height="498px" alt="Responsive image">
+        <img src="event2.png" width="100%" height="500px" alt="Responsive image">
             <div class="bg-black"></div>
       </div>
       <div class="banner-img">
@@ -84,8 +84,13 @@
       <?php
       $bln = [1,2,3,4,5,6,7,8,9,10,11,12];
       for($i=1;$i<=count($bln);$i++){
+        if (isset($_GET['bulan'])) {
+          $active = $i==$_GET['bulan'] ? "class='active'" : "";
+        } else {
       $active = ($i." ".date("Y")==date("m Y")) ? "class='active'" : "";
-      echo "<div class='col-lg-1'><a $active href='?halaman=event&$bulan[$i]'>$bulan[$i]</a></div>";
+
+        }
+      echo "<div class='col-lg-1'><a $active href='?halaman=event&bulan=$i'>$bulan[$i]</a></div>";
       if (isset($GET[$bulan[$i]])) {
       
       }
@@ -99,7 +104,12 @@
     <div class="row">
       <div class="col-md-12">
         <?php
-        $query = mysqli_query($koneksi,"SELECT * FROM event");
+        if (isset($_GET['bulan'])) {
+          $filter ="WHERE MONTH(tgl_event)='$_GET[bulan]' AND YEAR(tgl_event)='".date('Y')."'";
+        } else {
+          $filter = "WHERE MONTH(tgl_event)='".date('m')."' AND YEAR(tgl_event)='".date('Y')."' ";
+        }
+        $query = mysqli_query($koneksi,"SELECT * FROM event $filter");
         foreach ($query as $data) {
         ?>
         <div class="row">

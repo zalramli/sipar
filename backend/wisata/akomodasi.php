@@ -54,9 +54,9 @@ if (isset($_GET['hapus'])) {
   <li class="breadcrumb-item">
     <a href="index.html">Dashboard</a>
   </li>
-  <li class="breadcrumb-item active">Kuliner / Menu Kuliner</li>
+  <li class="breadcrumb-item active">Wisata / Akomodasi</li>
 </ol>
-		<button style="margin-left:10px;margin-bottom: 10px;" class="btn btn-secondary" data-target="#modaltambah" data-toggle="modal">Tambah Menu</button>
+		<button style="margin-left:10px;margin-bottom: 10px;" class="btn btn-secondary" data-target="#modaltambah" data-toggle="modal">Tambah</button>
 		<div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -85,7 +85,7 @@ if (isset($_GET['hapus'])) {
                       <td><?php echo $data['harga'] ?></td>
                     	<td>
             		<a href="#" class="btn btn-outline-primary klik-edit" id="<?php echo $data['id_akomodasi'] ?>" data-toggle="modal" data-target="#modaledit"><i class="fa fa-edit"></i></a>
-                    <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" style="margin-top: 5px;" class="btn btn-outline-danger" href="?/=akomodasi&hapus=<?php echo $data['id_akomodasi']."&w=".$data['id_wisata'] ?>"><i class="fa fa-trash"></i></a>
+                    <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" class="btn btn-outline-danger" href="?/=akomodasi&hapus=<?php echo $data['id_akomodasi']."&w=".$data['id_wisata'] ?>"><i class="fa fa-trash"></i></a>
 
 
                     	</td>

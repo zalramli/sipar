@@ -24,15 +24,6 @@
       <i class="fas fa-bars"></i>
       </button>
       <!-- Navbar Search -->
-            <?php 
-
-session_start();
-
-if (!isset($_SESSION['username'])) {
-      header("location:login1.php");
-  # code...
-}
-?>
 
     </nav>
     <div id="wrapper">
@@ -85,10 +76,15 @@ if (!isset($_SESSION['username'])) {
                     <span>Tentang</span></a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="?/=userTampil">
+                      <i class="fas fa-fw fa-chart-area"></i>
+                      <span>User</span></a>
+                    </li>
+                  <!-- <li class="nav-item">
                     <a class="nav-link" href="?/=kategori_wisatax">
                       <i class="fas fa-fw fa-chart-area"></i>
                       <span>XKategori</span></a>
-                    </li>
+                    </li> -->
                      <li class="nav-item">
                     <a class="nav-link" href="logout.php">
                       <i class="fas fa-fw fa-chart-area"></i>
@@ -109,6 +105,7 @@ if (!isset($_SESSION['username'])) {
                       include 'backend/paket_wisata/'.$_GET['/'].'.php';
                       include 'backend/kategori_wisata/'.$_GET['/'].'.php';
                       include 'backend/tentang/'.$_GET['/'].'.php';
+                      include 'backend/user/'.$_GET['/'].'.php';
                       include 'backend/xmodal_kategori/'.$_GET['/'].'.php';
                       }
                       ?>

@@ -3,7 +3,7 @@ if ($_GET['kategori'] == "alam") {
   ?>
   <div class="wrap mb-4">
       <div class="relatif">
-      <img src="2.jpg" class="img-fluid" alt="Responsive image">
+      <img src="asset/img/banner/wisata_alam.jpg" width="100%" height="500px" alt="Responsive image">
             <div class="bg-black"></div>
       </div>
       <div class="banner-img">
@@ -12,7 +12,7 @@ if ($_GET['kategori'] == "alam") {
       <div class="navigasi">
         <a href="?halaman=wisata&kategori=alam" class="nav-custActive">Alam</a>
         <a href="?halaman=wisata&kategori=buatan" class="nav-cust">Buatan</a>
-        <a href="?halaman=wisata_religi" class="nav-cust">Religi</a>
+        <a href="?halaman=wisata&kategori=religi" class="nav-cust">Religi</a>
       </div>
 </div>
 <div class="container-fluid jarak-section">
@@ -140,7 +140,7 @@ if ($_GET['kategori'] == "buatan") {
 ?>
 <div class="wrap mb-4">
       <div class="relatif">
-      <img src="2.jpg" class="img-fluid" alt="Responsive image">
+      <img src="asset/img/banner/buatan.jpg" style="width: 100%; height: 500px;" alt="Responsive image">
             <div class="bg-black"></div>
       
       </div>
@@ -277,7 +277,7 @@ if ($_GET['kategori'] == "religi") {
   ?>
 <div class="wrap mb-4">
       <div class="relatif">
-      <img src="2.jpg" class="img-fluid" alt="Responsive image">
+        <img src="asset/img/banner/wisata_religi.jpg" style="width: 100%; height: 500px;" alt="Responsive image">
             <div class="bg-black"></div>
       
       </div>

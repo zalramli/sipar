@@ -5,7 +5,7 @@
 
 if (isset($_POST['update'])){
 	$kode = $_POST['kode'];
-	$kategori = $_POST['kategori'];
+	$kategori = ucwords($_POST['kategori']);
 
 	$query2 = mysqli_query($koneksi, "UPDATE kategori_wisata SET id_kategoriWisata='$kode', nama_kategori='$kategori' WHERE id_kategoriWisata='$id'");
 	 if($query2){

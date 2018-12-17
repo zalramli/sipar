@@ -24,6 +24,7 @@
       <i class="fas fa-bars"></i>
       </button>
       <!-- Navbar Search -->
+      
 
     </nav>
     <div id="wrapper">

@@ -1,3 +1,32 @@
+<?php
+include 'koneksi/koneksi.php';
+
+session_start();
+ 
+// menghubungkan dengan koneksi
+if (isset($_POST['login'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+// menyeleksi data admin dengan username dan password yang sesuai
+$data = mysqli_query($koneksi,"select * from user where username='$username' and password='$password'");
+
+$data2 = mysqli_fetch_array($data);
+
+ 
+// menghitung jumlah data yang ditemukan
+$cek = mysqli_num_rows($data);
+ 
+if($cek > 0){
+  $_SESSION['username'] = "login";
+  header("location:backend.php");
+}else{
+  header("location:login.php");
+}
+}
+ 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,28 +54,20 @@
       <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
-          <form>
+          <form method="post">
             <div class="form-group">
               <div class="form-label-group">
-                <input type="text" id="inputText" class="form-control" placeholder="Masukan Username" required="required" autofocus="autofocus">
+                <input type="text" id="inputText" name="username" class="form-control" placeholder="Masukan Username" required="required" autofocus="autofocus">
                 <label for="inputText">Username</label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
                 <label for="inputPassword">Password</label>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="remember-me">
-                  Remember Password
-                </label>
-              </div>
-            </div>
-            <a class="btn btn-primary btn-block" href="backend.php">Login</a>
+            </div><br>
+            <button type="submit" name="login" class="btn btn-primary btn-block mb-2">Login</button>
             <a class="btn btn-danger btn-block" href="index.php"><i class="fa fa-undo-alt"></i> Kembali</a>
           </form>
         </div>

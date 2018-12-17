@@ -31,8 +31,8 @@
                       <td width=""> <?php echo $data['id_kategoriWisata']?> </td>
                       <td width=""> <?php echo $data['nama_kategori']?> </td>
                       <td style="text-align: center;" width="">
-                        <a href="backend.php?/=kategoriWisata_edit&id=<?php echo $data['id_kategoriWisata']?> " class="btn btn-primary" href=""><i class="fa fa-edit"> Edit </i></a>
-                        <a style="margin-top: 5px;" class="btn btn-danger" href=backend.php?/=kategoriWisata_hapus&id=<?php echo $data['id_kategoriWisata']?> "><i class="fa fa-trash"></i></a>
+                        <a href="backend.php?/=kategoriWisata_edit&id=<?php echo $data['id_kategoriWisata']?> " class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger" href=backend.php?/=kategoriWisata_hapus&id=<?php echo $data['id_kategoriWisata']?> "><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php

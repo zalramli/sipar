@@ -1,4 +1,4 @@
 <?php
-$a = password_hash("ali12",PASSWORD_DEFAULT);
+$a = password_hash("iyek",PASSWORD_DEFAULT);
 var_dump($a);
 ?>

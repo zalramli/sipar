@@ -12,6 +12,18 @@
   <img class="img__img" src="event2.png" />
   <p class="img__description">This image looks super neat.</p>
 </div>
+
+<div class="container">
+        <header>
+            <h1>Selamat Datang</h1>
+        </header>
+ 
+        <article>
+            website ini telah dikunjungi
+            
+            kali
+        </article>
+    </div>
     
 
 <!-- Caraousel -->

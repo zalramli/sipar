@@ -1,3 +1,4 @@
+
 <?php 
 if ($_GET['hapus']) {
   $id = $_GET['hapus'];
@@ -47,7 +48,7 @@ if ($query) {
                       <td style="text-align: center;" width="20%"><img style="max-height: 100px; max-width: 100px"; src="asset/img/event/<?php echo $data['gambar']; ?>" alt=""></td>
                       <td style="text-align: center;" width="20%">
                         <a href="?/=eventEdit&id=<?php echo $data['id_event']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
-                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" style="margin-top: 5px;" class="btn btn-outline-danger" href="?/=event_tampil&hapus=<?php echo $data['id_event'] ?>"><i class="fa fa-trash"></i></a>
+                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" class="btn btn-outline-danger" href="?/=event_tampil&hapus=<?php echo $data['id_event'] ?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php 

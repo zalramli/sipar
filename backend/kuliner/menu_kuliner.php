@@ -78,9 +78,7 @@ if (isset($_GET['hapus'])) {
                     	<td><?php echo $data['harga'] ?></td>
                     	<td>
             		<a href="#" class="btn btn-outline-primary klik-edit" id="<?php echo $data['id_menu'] ?>" data-toggle="modal" data-target="#modaledit"><i class="fa fa-edit"></i></a>
-                    <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" style="margin-top: 5px;" class="btn btn-outline-danger" href="?/=menu_kuliner&hapus=<?php echo $data['id_menu']."&q=".$data['id_tempat'] ?>"><i class="fa fa-trash"></i></a>
-
-
+                    <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" class="btn btn-outline-danger" href="?/=menu_kuliner&hapus=<?php echo $data['id_menu']."&q=".$data['id_tempat'] ?>"><i class="fa fa-trash"></i></a>
                     	</td>
                     </tr>
                     <?php 

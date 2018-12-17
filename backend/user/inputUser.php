@@ -19,7 +19,7 @@ $query = mysqli_query($koneksi,"INSERT INTO user VALUES ('','$user1','$psw')");
   </li>
   <li class="breadcrumb-item active">Input User</li>
 </ol>  
-<a href="?/=userTampil"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
+<a href="?/=userTampil"><button class="btn btn-secondary"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
 
 <form action="" method="post"><br>
   <div class="form-row">

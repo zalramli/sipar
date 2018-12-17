@@ -121,6 +121,7 @@
     </section>
     <!-- Tutup Section tentang -->
     <!-- Destinasi Pilihan -->
+
     <section class="gallery-block destinasi-wisata jarak-content">
       <div class="container">
         <div class="judul">
@@ -133,16 +134,12 @@
           foreach ($query as $data) {
           ?>
           <div class="col-md-6 col-lg-4">
-            <a href="?halaman=wisata_detail&id=<?php echo $data['id_wisata'] ?>"">
+            <a href="?halaman=wisata_detail&id=<?php echo $data['id_wisata'] ?>">
               <div id="sr" class="card border-0 transform-on-hover">
                 <img src="asset/img/gprofil_wisata/<?php echo $data['gambar_profil'] ?>" alt="Card Image" class="img-wisatapilihan">
-                <div class="card-body">
-                  <h6 style="text-align: center;" class="mb-3"><a href="?halaman=wisata_detail&id=<?php echo $data['id_wisata'] ?>""><?php echo $data['nama'] ?></a></h6>
-                  <p class="text-muted card-text"><?php echo substr($data['deskripsi'],0,70) ?></p>
-                  <div class="float-right mt-2">
-                    <a style="color:#D5347D" href="?halaman=wisata_detail&id=<?php echo $data['id_wisata'] ?>"">Read More <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                </div>
+                <div class="banner-destinasi">
+              <h5 class="text-center text-white"><?php echo $data['nama'] ?></h5>
+            </div>
               </div>
             </a>
           </div>
@@ -150,24 +147,24 @@
         </div>
       </div>
     </section>
+
     <!-- tutup destinasi -->
     <section class="gallery-block compact-gallery jarak-content">
       <div class="container">
         <div class="judul">
           <h2 id="sr">Kuliner Khas Jember</h2>
         </div>
-        <div class="transisi-galery">
+        <div class="">
           <div class="row no-gutters">
             <?php 
             $query2 = mysqli_query($koneksi3,"SELECT tempat_kuliner.nama,tempat_kuliner.lokasi,tempat_kuliner.gambar_profil,tempat_kuliner.id_tempat,kategori_kuliner.nama_kategori,tempat_kuliner.deskripsi, ROUND(AVG(rating_kuliner.rating)) AS ratings FROM tempat_kuliner JOIN kategori_kuliner ON tempat_kuliner.id_kategoriKuliner=kategori_kuliner.id_kategoriKuliner LEFT JOIN rating_kuliner ON tempat_kuliner.id_tempat = rating_kuliner.id_tempat GROUP BY tempat_kuliner.id_tempat HAVING ROUND(AVG(rating_kuliner.rating)) <= 5 limit 9");
             foreach ($query2 as $data2) {
              ?>
             <div id="sr" class="col-md-6 col-lg-4 item zoom-on-hover">
-              <a class="lightbox" href="img/image1.jpg">
+              <a class="lightbox" href="?halaman=kuliner_detail&id=<?php echo $data2['id_tempat'] ?>">
                 <img class="img-fluid image" src="asset/img/gprofil_kuliner/<?php echo $data2['gambar_profil'] ?>">
                 <span class="description">
-                  <span class="description-heading"><?php echo $data2['nama'] ?></span>
-                  <span class="description-body"><?php echo substr($data2['deskripsi'],0,100) ?></span>
+                  <h4 class="text-white text-center"><?php echo $data2['nama'] ?></h4>
                 </span>
               </a>
             </div>
@@ -252,8 +249,17 @@
             <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
           </div>
           <div class="col-md-3 mx-auto">
-            <h6 class="text-white">PENGUNJUNG</h6>
-            <hr class="d-inline-block">
+             <?php 
+            $filecounter=("pengunjung.txt");
+            $kunjungan=file($filecounter);
+            $kunjungan[0]++;
+            $file=fopen($filecounter,"w");
+            fputs($file,"$kunjungan[0]");
+            fclose($file);
+            ?>
+                <h6 class="text-white">PENGUNJUNG : <?php echo $kunjungan[0] ?> </h6>
+                
+            </div>
           </div>
         </div>
       </div>

@@ -49,10 +49,12 @@ body {
 
 .navbar-light .navbar-nav .nav-link {
     color: black;
-    font-family: ubuntu;
-    font-size: 18px;
+    font-family: Arial;
+    font-weight: bold; 
+    font-size: 13px;
+    text-transform: uppercase;
     text-align: center;
-    margin: 5px;
+    margin: 3px;
 }
 
 .navbar-light ul a:hover {
@@ -129,7 +131,7 @@ body {
 }
 
 footer {
-    background: #2E3739;
+    background: #2c2c54;
     border-top: 1px solid purple;
 }
 
@@ -305,6 +307,15 @@ a.card-link:hover {
     margin-bottom: 30px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
 }
+.banner-destinasi{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #2C2C54;
+    width: 200px;
+    z-index: 10;
+    border-radius: 100px 10px 5px 5px;
+}
 
 .card-footer {
     padding: 0;
@@ -439,7 +450,7 @@ a.card-link:hover {
 .sosmed {
     width: 100%;
     height: 50px;
-    background: #2c2c54;
+    background: #40407a;
 }
 
 .baguetteBox-button {

@@ -1,8 +1,6 @@
 <?php
 //logout 
-
 session_start();
 session_destroy();
-header("location:Login1.php");
-
+header("location:login.php");
  ?>

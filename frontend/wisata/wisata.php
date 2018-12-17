@@ -123,12 +123,6 @@ if ($_GET['kategori'] == "alam") {
     </div>
     </a>
     <?php } ?>
-    <h5 class="text-center pb-2 pt-4"><b>Instagram</b></h5>
-    <div class="row">
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-    </div>
   </div>
 </div>
 </div>
@@ -261,12 +255,6 @@ if ($_GET['kategori'] == "buatan") {
     </div>
     </a>
     <?php } ?>
-    <h5 class="text-center pb-2 pt-4"><b>Instagram</b></h5>
-    <div class="row">
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-    </div>
   </div>
 </div>
 </div>
@@ -398,12 +386,6 @@ if ($_GET['kategori'] == "religi") {
     </div>
     </a>
     <?php } ?>
-    <h5 class="text-center pb-2 pt-4"><b>Instagram</b></h5>
-    <div class="row">
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-    </div>
   </div>
 </div>
 </div>

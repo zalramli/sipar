@@ -98,12 +98,6 @@ if ($_GET['kategori'] == "cafe") {
     </div>
     </a>
     <?php } ?>
-    <h5 class="text-center pb-2 pt-4"><b>Instagram</b></h5>
-    <div class="row">
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-    </div>
   </div>
 </div>
 </div>
@@ -210,12 +204,6 @@ if ($_GET['kategori'] == "warung") {
     </div>
     </a>
     <?php } ?>
-    <h5 class="text-center pb-2 pt-4"><b>Instagram</b></h5>
-    <div class="row">
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-    </div>
   </div>
 </div>
 </div>
@@ -323,12 +311,6 @@ if ($_GET['kategori'] == "restoran") {
     </div>
     </a>
     <?php } ?>
-    <h5 class="text-center pb-2 pt-4"><b>Instagram</b></h5>
-    <div class="row">
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-      <div class="col-md-3">Gambar</div>
-    </div>
   </div>
 </div>
 </div>

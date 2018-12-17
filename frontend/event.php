@@ -22,7 +22,7 @@
           <div class="relatif-event">
             <img src="asset/img/gdetail_kuliner/bridge.jpg" alt="Card Image" class="img-eventBest1">
             <div class="banner-event">
-              <h5 class="text-center text-white">JFC</h5>
+              <h6 class="text-center text-white">JFC</h6>
             </div>
             <div class="event-deskripsi">
               <h3>15 Desember 2018</h3>

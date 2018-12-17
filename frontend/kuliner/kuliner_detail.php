@@ -139,16 +139,13 @@ if (isset($_POST['simpan'])) {
             ?>
           </div>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-12 mt-4">
+             <h4 class="text-center">Lokasi</h4>
+              <iframe src="<?php echo $data['lokasi'] ?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <iframe src="<?php echo $data['lokasi'] ?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
 </div>

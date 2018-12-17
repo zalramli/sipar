@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['simpan'])) {
   $kode = $_POST['kodee'];
-  $kategori = $_POST['kategorii'];
+  $kategori = ucwords($_POST['kategorii']);
 
   $query = mysqli_query($koneksi,"INSERT INTO kategori_kuliner (id_kategoriKuliner,nama_kategori) VALUES ('$kode','$kategori') ");
    if($query){

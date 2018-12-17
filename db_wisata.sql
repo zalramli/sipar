@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Des 2018 pada 14.50
+-- Waktu pembuatan: 17 Des 2018 pada 15.11
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.11
 
@@ -45,7 +45,8 @@ CREATE TABLE `akomodasi` (
 INSERT INTO `akomodasi` (`id_akomodasi`, `id_wisata`, `titik_awal`, `kendaraan`, `harga`, `dari`, `ke`) VALUES
 (2, 'W001', 'Terminal', 'lin', 5000, 'Terminal Tawang Alun', 'Jalan Mastrip'),
 (3, 'W001', 'Terminal', 'ojek', 10000, 'Jalan Mastrip', 'Air Terjun'),
-(4, 'W002', 'Stasiun', 'lin', 5000, 'Stasiun Rambipuji', 'Jalan Mastripsxss');
+(4, 'W002', 'Stasiun', 'lin', 5000, 'Stasiun Rambipuji', 'Jalan Mastripsxss'),
+(5, 'W002', 'Stasiun', 'lin', 5000, 'Stasiun Rambipuji', 'Jalan Mastripsxss');
 
 -- --------------------------------------------------------
 
@@ -78,27 +79,8 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id_event`, `nama`, `tgl_event`, `lokasi`, `gambar`) VALUES
-('E001', 'Jfcs', '2018-12-15', 'Jalan Asds', 'sky.jpg');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `gmaps`
---
-
-CREATE TABLE `gmaps` (
-  `id` int(11) NOT NULL,
-  `nama_lokasi` int(100) NOT NULL,
-  `lat` varchar(50) NOT NULL,
-  `lng` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `gmaps`
---
-
-INSERT INTO `gmaps` (`id`, `nama_lokasi`, `lat`, `lng`) VALUES
-(1, 12, '-8.159382', '113.723629');
+('E001', 'Jfcs', '2018-12-15', 'Jalan Asds', 'sky.jpg'),
+('E002', 'Jfcsxxx', '2018-11-14', 'Jalan Asds', 'sky.jpg');
 
 -- --------------------------------------------------------
 
@@ -138,7 +120,7 @@ CREATE TABLE `kategori_kuliner` (
 INSERT INTO `kategori_kuliner` (`id_kategoriKuliner`, `nama_kategori`) VALUES
 ('KK001', 'Cafe'),
 ('KK002', 'Warung'),
-('KK003', 'Restoran');
+('KK003', 'restoran');
 
 -- --------------------------------------------------------
 
@@ -157,9 +139,8 @@ CREATE TABLE `kategori_wisata` (
 
 INSERT INTO `kategori_wisata` (`id_kategoriWisata`, `nama_kategori`) VALUES
 ('KW001', 'Alam'),
-('KW002', 'Buatan'),
-('KW003', 'Religi'),
-('KW004', 'Dasx');
+('KW002', 'Edukasi'),
+('KW003', 'Religi');
 
 -- --------------------------------------------------------
 
@@ -237,18 +218,6 @@ CREATE TABLE `rating_kuliner` (
   `rating` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `rating_kuliner`
---
-
-INSERT INTO `rating_kuliner` (`id_rating`, `id_tempat`, `email`, `deskripsi`, `rating`) VALUES
-(1, 'K002', 'asi@gmail.com', 'babla', 5),
-(2, 'K002', 'asdas@gmail.com', 'asdh has  kash', 5),
-(3, 'K001', 'ads@fgmail.com', 'asdasdasdas asd', 4),
-(4, 'K003', '', '', 5),
-(5, 'K004', '', '', 4),
-(6, 'K005', '', '', 4);
-
 -- --------------------------------------------------------
 
 --
@@ -260,32 +229,6 @@ CREATE TABLE `rating_wisata` (
   `id_wisata` varchar(10) NOT NULL,
   `rating` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `rating_wisata`
---
-
-INSERT INTO `rating_wisata` (`id_rating`, `id_wisata`, `rating`) VALUES
-(1, 'W001', 5),
-(2, 'W001', 4),
-(3, 'W001', 3),
-(4, 'W001', 2),
-(5, 'W001', 4),
-(6, 'W001', 3),
-(7, 'W002', 4),
-(8, 'W002', 3),
-(9, 'W002', 2),
-(10, 'W002', 2),
-(11, 'W001', 3),
-(12, 'W001', 1),
-(13, 'W001', 5),
-(14, 'W001', 5),
-(15, 'W001', 5),
-(16, 'W003', 5),
-(17, 'W004', 5),
-(18, 'W005', 5),
-(19, 'W001', 0),
-(20, 'W001', 5);
 
 -- --------------------------------------------------------
 
@@ -299,21 +242,6 @@ CREATE TABLE `statistik_pengunjung` (
   `hits` int(11) NOT NULL,
   `online` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `statistik_pengunjung`
---
-
-INSERT INTO `statistik_pengunjung` (`ip`, `tanggal`, `hits`, `online`) VALUES
-('127.0.0.1', '2018-10-11', 247, '1539276392'),
-('192.168.43.31', '2018-10-11', 7, '1539222514'),
-('192.168.43.147', '2018-10-11', 1, '1539220256'),
-('127.0.0.1', '2018-10-14', 202, '1539531009'),
-('::1', '2018-10-16', 175, '1539703788'),
-('127.0.0.1', '2018-10-16', 62, '1539700747'),
-('::1', '2018-10-17', 55, '1539783679'),
-('::1', '2018-10-31', 14, '1540998058'),
-('::1', '2018-11-03', 1, '1541255521');
 
 -- --------------------------------------------------------
 
@@ -330,16 +258,6 @@ CREATE TABLE `tempat_kuliner` (
   `gambar_detail` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tempat_kuliner`
---
-
-INSERT INTO `tempat_kuliner` (`id_tempat`, `id_kategoriKuliner`, `nama`, `lokasi`, `gambar_profil`, `gambar_detail`, `deskripsi`) VALUES
-('K001', 'KK001', 'Cafe Kolongs', 'Jalan Cutmutiahs', 'bg.jpg', '1.png,2.png,3.png,4.png,5.png,6.png', 'Lorems ipsum dolor sit amet, consectetur adipisicing elit. Minus, recusandae, quia! Nisi repudiandae, eaque voluptatibus architecto tenetur similique deleniti reprehenderit perspiciatis placeat explicabo, dolores incidunt obcaecati minus facilis. Mollitia temporibus suscipit provident omnis asperiores perspiciatis doloribus voluptates quaerat id facilis alias, saepe inventore dolorum laborum nihil magni tenetur, beatae quisquam nam dicta harum quia! Omnis quo placeat delectus, ea, alias dolor dolores iure esse itaque sit, aperiam quod dolore quaerat iusto cupiditate nulla illo cumque reiciendis! Laudantium nemo, natus architecto mollitia. Obcaecati inventore quod non quisquam ipsam commodi deserunt, incidunt reprehenderit, aperiam vero consectetur natus asperiores iure earum aliquid soluta iste quia saepe ab eligendi explicabo aspernatur laborum enim cumque. Debitis qui error corrupti suscipit culpa accusamus beatae ipsam fugit a. Eveniet assumenda laboriosam eaque. Ipsum quidem nobis cum et minus quas nam hic ducimus iste voluptatum earum explicabo, distinctio veritatis aperiam itaque sint officia saepe, sed alias asperiores, voluptatibus ea voluptatem sapiente. Alias quibusdam iste, ipsam nobis illum ex reiciendis velit nemo ipsum enim, quaerat voluptate. Accusamus sed maiores aperiam dolorem ad ullam cum, velit fugiat harum ipsa. Repudiandae iste odio autem tenetur voluptatum animi recusandae aperiam porro, ad, nesciunt, soluta tempora voluptates amet ipsum minus illum. A, inventore?'),
-('K002', 'KK002', 'As', 'Asd', 'benches.jpg', 'benches.jpg,bridge.jpg,coast.jpg,park.jpg,rails.jpg', 'asd'),
-('K003', 'KK002', 'Warung Ijo', 'Jalan Mastrip', 'bridge.jpg', 'benches.jpg,bridge.jpg,coast.jpg,park.jpg', 'warung ijo blablablabla asdkbk sakdk sadlsadh sdaskd sadsa qwe sadaksd sadasd sadkag sadkagd asdgk aks'),
-('K004', 'KK002', 'Warung Bu Niban', 'Jalan Bangka', 'traffic.jpg', 'coast.jpg,park.jpg,rocks.jpg,sky.jpg,traffic.jpg', 'warung mastirpbkasdh sdh a lahsdh alsdhl lsadhlh sladhladsh');
 
 -- --------------------------------------------------------
 
@@ -358,7 +276,27 @@ CREATE TABLE `tentang` (
 --
 
 INSERT INTO `tentang` (`id_tentang`, `nama_tentang`, `deskripsi`) VALUES
-(2, 'xxx', 'aaa');
+(2, 'xxx', 'aaa'),
+(3, 'asd', 'sad');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id_user`, `username`, `password`) VALUES
+(1, 'iyek', 'iyek');
 
 -- --------------------------------------------------------
 
@@ -370,23 +308,11 @@ CREATE TABLE `wisata` (
   `id_wisata` varchar(10) NOT NULL,
   `id_kategoriWisata` varchar(10) DEFAULT NULL,
   `nama` varchar(50) NOT NULL,
-  `lokasi` varchar(50) NOT NULL,
+  `lokasi` text NOT NULL,
   `gambar_profil` tinytext NOT NULL,
   `detail_gambar` text NOT NULL,
   `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `wisata`
---
-
-INSERT INTO `wisata` (`id_wisata`, `id_kategoriWisata`, `nama`, `lokasi`, `gambar_profil`, `detail_gambar`, `deskripsi`) VALUES
-('W001', 'KW001', 'Pantai Papumas', 'Jalan Cutmutiahs', '2.jpg', 'benches.jpg,bridge.jpg,coast.jpg,park.jpg,rails.jpg,rocks.jpg', 'Lorems ipsum dolor sit amet, consectetur adipisicing elit. Minus, recusandae, quia! Nisi repudiandae, eaque voluptatibus architecto tenetur similique deleniti reprehenderit perspiciatis placeat explicabo, dolores incidunt obcaecati minus facilis. Mollitia temporibus suscipit provident omnis asperiores perspiciatis doloribus voluptates quaerat id facilis alias, saepe inventore dolorum laborum nihil magni tenetur, beatae quisquam nam dicta harum quia! Omnis quo placeat delectus, ea, alias dolor dolores iure esse itaque sit, aperiam quod dolore quaerat iusto cupiditate nulla illo cumque reiciendis! Laudantium nemo, natus architecto mollitia. Obcaecati inventore quod non quisquam ipsam commodi deserunt, incidunt reprehenderit, aperiam vero consectetur natus asperiores iure earum aliquid soluta iste quia saepe ab eligendi explicabo aspernatur laborum enim cumque. Debitis qui error corrupti suscipit culpa accusamus beatae ipsam fugit a. Eveniet assumenda laboriosam eaque. Ipsum quidem nobis cum et minus quas nam hic ducimus iste voluptatum earum explicabo, distinctio veritatis aperiam itaque sint officia saepe, sed alias asperiores, voluptatibus ea voluptatem sapiente. Alias quibusdam iste, ipsam nobis illum ex reiciendis velit nemo ipsum enim, quaerat voluptate. Accusamus sed maiores aperiam dolorem ad ullam cum, velit fugiat harum ipsa. Repudiandae iste odio autem tenetur voluptatum animi recusandae aperiam porro, ad, nesciunt, soluta tempora voluptates amet ipsum minus illum. A, inventore?'),
-('W002', 'KW002', 'Teluk Love', 'Jalan Cutmutiah', 'Screenshot_4.png', '1.png,2.png,3.png,4.png,5.png,6.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic nulla molestias provident dolorum harum ratione. Temporibus dicta labore reiciendis provident sunt error fugiat eius animi eaque aspernatur, nemo, ipsa. Velit hic asperiores nisi ea nemo accusantium tenetur odit, tempore repellat non culpa quibusdam repudiandae incidunt corporis. Earum id perferendis hic repellat fugit officiis illo ea similique quibusdam sequi, possimus, dolorum, quisquam asperiores atque culpa quas et quo perspiciatis, minus ex aperiam doloribus voluptates ullam. Quos nostrum debitis dolorem possimus quisquam recusandae ut mollitia voluptate, harum non repellat dignissimos iusto aliquid error eveniet eum, aspernatur rerum quo accusantium reiciendis beatae. Eum perspiciatis consequatur hic a molestias facilis, distinctio facere sunt. Ipsum officiis ullam quam, recusandae facere voluptatum modi, suscipit ab omnis, alias neque iusto saepe perspiciatis, voluptas odio amet id. Harum repellat esse aliquam soluta, fuga, nesciunt earum saepe assumenda perspiciatis libero minus eveniet ratione asperiores repellendus, blanditiis cum! Eos nulla veniam, possimus temporibus doloribus ipsam deleniti ipsa, autem cumque sed obcaecati cum natus soluta aliquid molestias accusamus expedita ex placeat tempore beatae in iusto dignissimos maiores nobis. Rerum, molestiae. Placeat nam iste dolorem consectetur eius assumenda vero natus nesciunt architecto at explicabo fugit tenetur, quisquam quos velit officiis, deleniti est.'),
-('W003', 'KW001', 'Pantai Sanur', 'Jalan Mastrip', 'Screenshot_4.png', 'daftar-buku.png,daftar-dosen.png,daftar-mahasiswa.png,input-buku.png,input-pengguna.png,login.png,peminjaman.png', 'lorem klashk hkhasdga kjsk g ajks g j agsjgfjhgkjg kjkgK K Gakhkh KHAKHKH KHSKH KJHKHhkahs khlahasdhklhsalk hlal ad akhh askhj sakhsakjh kahk hahf khhaksh lkhasklhlk alkshlkha ash klh lkahlk hklashlkh afhawhio wqa ah sa kh kah a h k  ahkhakssasa assaldhlkash uifak  ash haslhaskld h  ashdlashhksad  asdlhsadhsdakhfh ashlhs hf akshdsh hasdhsah kashl shadlhsa dhaslk sksdhksahkldsh  sahdksahksahkls sadhslakhksdahs'),
-('W004', 'KW002', 'Pantai Andalan', 'Jalan Mastrip', 'Screenshot_4.png', 'daftar-buku.png,daftar-dosen.png,daftar-mahasiswa.png,input-buku.png,input-pengguna.png,login.png', 'asdasd  ;asjdjjsja askhdaskaskj askjgdkasgd sakjjdgkaskj sakdhkashd kashdhsadjk askdsakdh kasdkashk askdhksahk askdhkashd ksahdsad'),
-('W005', 'KW003', 'Masjid Agung', 'Jalan Sudirman', 'Screenshot_5.png', 'daftar-buku.png,daftar-dosen.png,daftar-mahasiswa.png,input-buku.png,input-pengguna.png,login.png', 'sadhkasdkh askdjhaskdh  asdksakhsa askdkashka sadjgaskdg sadkhaskhsdak askhdkjashkj akjsdkjaskjdhsag'),
-('W006', 'KW001', 'Tanjung Papmas', 'Jalan Cutmutiahss', 'benches.jpg', 'benches.jpg,bridge.jpg,coast.jpg,park.jpg,rails.jpg,rocks.jpg', 'pemandangans alam adalah asdjas asdaskdb asdask asdasdj asdjgasdkj asgasdk askgasdk ');
 
 --
 -- Indexes for dumped tables
@@ -409,12 +335,6 @@ ALTER TABLE `cindramata`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`id_event`);
-
---
--- Indeks untuk tabel `gmaps`
---
-ALTER TABLE `gmaps`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `jadwal_transportasi`
@@ -477,6 +397,12 @@ ALTER TABLE `tentang`
   ADD PRIMARY KEY (`id_tentang`);
 
 --
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- Indeks untuk tabel `wisata`
 --
 ALTER TABLE `wisata`
@@ -491,19 +417,13 @@ ALTER TABLE `wisata`
 -- AUTO_INCREMENT untuk tabel `akomodasi`
 --
 ALTER TABLE `akomodasi`
-  MODIFY `id_akomodasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_akomodasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `cindramata`
 --
 ALTER TABLE `cindramata`
   MODIFY `id_cindramata` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `gmaps`
---
-ALTER TABLE `gmaps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `jadwal_transportasi`
@@ -539,7 +459,13 @@ ALTER TABLE `rating_wisata`
 -- AUTO_INCREMENT untuk tabel `tentang`
 --
 ALTER TABLE `tentang`
-  MODIFY `id_tentang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tentang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

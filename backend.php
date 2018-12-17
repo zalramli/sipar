@@ -68,7 +68,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" href="?/=kategoriWisata_tampil">Kategori Wisata</a>
-                    <a class="dropdown-item" href="">Kategori Kuliner</a>
+                    <a class="dropdown-item" href="?/=kategoriKuliner_tampil">Kategori Kuliner</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -105,6 +105,7 @@
                       include 'backend/jadwal_transportasi/'.$_GET['/'].'.php';
                       include 'backend/paket_wisata/'.$_GET['/'].'.php';
                       include 'backend/kategori_wisata/'.$_GET['/'].'.php';
+                      include 'backend/kategori_kuliner/'.$_GET['/'].'.php';
                       include 'backend/tentang/'.$_GET['/'].'.php';
                       include 'backend/user/'.$_GET['/'].'.php';
                       include 'backend/xmodal_kategori/'.$_GET['/'].'.php';

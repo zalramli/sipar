@@ -1,14 +1,17 @@
 <?php
 if (isset($_POST['simpan'])) {
-$ide = $_POST['ide'];
-$daris = $_POST['daris'];
-$sampai = $_POST['sampai'];
-$query = mysqli_query($koneksi,"INSERT INTO jadwal_transportasi VALUES ('','$ide','$daris','$sampai')");
+$kategori = $_POST['kategori'];
+$nama_kendaraan = ucwords($_POST['nama_kendaraan']);
+$berangkat_dari = ucwords($_POST['berangkat_dari']);
+$jam_berangkat = $_POST['jam_berangkat'];
+$tujuan = ucwords($_POST['tujuan']);
+$pemberhentian = ucwords($_POST['pemberhentian']);
+$jam_sampai = $_POST['jam_sampai'];
+$query = mysqli_query($koneksi,"INSERT INTO jadwal_transportasi VALUES ('','$kategori','$nama_kendaraan','$berangkat_dari','$jam_berangkat','$tujuan','$pemberhentian','$jam_sampai')");
  if($query){
         echo "<script>window.location = 'backend.php?/=jadwal_transportasiTampil'</script>";
         }
 }
-
 ?>
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
@@ -20,17 +23,37 @@ $query = mysqli_query($koneksi,"INSERT INTO jadwal_transportasi VALUES ('','$ide
 
 <form action="" method="post"><br>
   <div class="form-row">
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
+      <label for="inputState"><b>Jenis Kendaraan</b></label>
+      <select id="inputState" name="kategori" class="form-control" required >
+            <option value="Bus">Bus</option>
+            <option value="Kereta Api">Kereta Api</option>
+            <option value="Pesawat">Pesawat</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
       <label for="inputText"><b>Nama Kendaraan</b></label>
-      <input type="text" name="ide" class="form-control" id="inputText" placeholder="Masukan nama kendaraan" required >
+      <input type="text" name="nama_kendaraan" class="form-control" id="inputText" placeholder="" required >
     </div>
-    <div class="form-group col-md-4">
-      <label for="inputText"><b>Dari</b></label>
-      <input type="text" name="daris" class="form-control" id="inputText" placeholder="" required >
+    <div class="form-group col-md-6">
+      <label for="inputText"><b>Berangkat Dari</b></label>
+      <input type="text" name="berangkat_dari" class="form-control" id="inputText" placeholder="" required >
     </div>
-        <div class="form-group col-md-4">
-      <label for="inputText"><b>sampai</b></label>
-      <input type="text" name="sampai" class="form-control" id="inputText" placeholder="" required >
+    <div class="form-group col-md-6">
+      <label for="inputText"><b>Jam Berangkat</b></label>
+      <input type="time" name="jam_berangkat" class="form-control" id="inputText" placeholder="" required >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputText"><b>Tujuan</b></label>
+      <input type="text" name="tujuan" class="form-control" id="inputText" placeholder="" required >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputText"><b>Pemberhentian</b></label>
+      <input type="text" name="pemberhentian" class="form-control" id="inputText" placeholder="" required >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputText"><b>Jam Sampai</b></label>
+      <input type="time" name="jam_sampai" class="form-control" id="inputText" placeholder="" required >
     </div>
   </div>
     

@@ -43,19 +43,19 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?/=kuliner_tampil">
-              <i class="fas fa-fw fa-chart-area"></i>
+              <i class="fas fa-fw fa fa-utensils"></i>
               <span>Kuliner</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="?/=event_tampil">
-                <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-fw fa-calendar"></i>
                 <span>Event</span></a>
               </li>
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="?/=jadwal_transportasiTampil">
                   <i class="fas fa-fw fa-table"></i>
                   <span>Jadwal Transportasi</span></a>
-                </li> -->
+                </li>
                 <li class="nav-item">
                 <a class="nav-link" href="?/=paket_wisataTampil">
                   <i class="fas fa-fw fa-table"></i>

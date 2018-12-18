@@ -1,6 +1,6 @@
 <div class="wrap mb-4">
       <div class="relatif">
-        <img src="event2.png" width="100%" height="500px" alt="Responsive image">
+        <img src="asset/img/banner/event.jpg" width="100%" height="500px" alt="Responsive image">
             <div class="bg-black"></div>
       </div>
       <div class="banner-img">
@@ -22,7 +22,7 @@
           <div class="relatif-event">
             <img src="asset/img/gdetail_kuliner/ngopi-hore-bawah-jembatan-bartender-kafe-kolong-jember-kab.jpg" alt="Card Image" class="img-eventBest1">
             <div class="banner-event">
-              <h6 class="text-center text-white">JFC</h6>
+              <h4 class="text-center text-white">JFC</h4>
             </div>
             <div class="event-deskripsi">
               <h3>15 Desember 2018</h3>
@@ -115,17 +115,17 @@
         <div class="row">
           <div class="col-md-4 jarak-section">
             <a style="text-decoration: none; color: black" class="lightbox" href="event.jpg">
-              <div class="card">
-                <img src="event.jpg" alt="Card Image" class="img-event">
-                <div class="card-body">
-                  <h5 class="card-title text-center"><?php echo $data['nama'] ?></h5>
-                  <p>Lokasi &nbsp&nbsp: <?php echo $data['lokasi'] ?></p>
-                  <p>Tanggal : <?php echo date('d M Y',strtotime($data['tgl_event'])) ?></p>
-                </div>
-              </div>
+                <div class="relatif-event">
+            <img src="asset/img/gdetail_kuliner/ngopi-hore-bawah-jembatan-bartender-kafe-kolong-jember-kab.jpg" alt="Card Image" class="img-event">
+            <div class="event-deskripsi3">
+              <h4><?php echo $data['nama'] ?></h4>
+              <h4><?php echo date('d M Y',strtotime($data['tgl_event'])) ?></h4>
+            </div>
+          </div>
             </a>
           </div>
         </div>
+
         <?php } ?>
       </div>
     </div>

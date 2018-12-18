@@ -1,6 +1,6 @@
 <div class="wrap mb-4">
       <div class="relatif">
-        <img src="asset/img/gdetail_kuliner/bridge.jpg" width="100%" height="498px" alt="Responsive image">
+        <img src="asset/img/banner/paket-wisata.jpg" width="100%" height="498px" alt="Responsive image">
             <div class="bg-black"></div>
         
       </div>

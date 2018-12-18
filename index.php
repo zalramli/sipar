@@ -106,14 +106,14 @@
         </div>
         <div class="row">
           <div id="sr" class="col-md-4 text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, praesentium velit facere aliquam similique, dolore doloribus, hic incidunt quia id placeat suscipit magnam dolor delectus! Totam dicta veritatis vel explicabo.</p>
+            <p>Selain itu Kota Jember juga mempunyai destinasi wisata pantai yang sungguh indah sebut saja Pantai Papuma (Pasir Putih Malikan), Pantai Watu Ulo, Pantai Bandealit, Pantai Puger, Pantai Paseban, Pantai Payangan, Pantai Rowo Cangak, dan masih banyak lagi wisata alam yang harus kamu kunjungi.</p>
           </div>
           <div id="sr" class="col-md-4 text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium molestiae quis modi debitis minus iusto itaque, dolor voluptas quidem molestias, sed voluptate nihil maxime, exercitationem illum. Sapiente incidunt ullam repudiandae!</p>
+            <p>Adalah sebuah kabupaten di Provinsi Jawa Timur, Indonesia yang beribukota di Jember. Kabupaten ini berbatasan dengan Kabupaten Probolinggo dan Kabupaten Bondowoso di utara, Kabupaten Banyuwangi di timur, Samudera Hindia di selatan, dan Kabupaten Lumajang di barat.</p>
             
           </div>
           <div id="sr" class="col-md-4 text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium molestiae quis modi debitis minus iusto itaque, dolor voluptas quidem molestias, sed voluptate nihil maxime, exercitationem illum. Sapiente incidunt ullam repudiandae!</p>
+            <p>Dikenal dengan sebutan Kota Karnaval, karena setiap tahun Jember menggelar event akbar yang bertajuk Jember Fashion Carnaval. Sebuah karnaval fashion busana yang kini gaungnya sudah mendunia, menampilkan kreativitas seniman Indonesia.</p>
             
           </div>
         </div>

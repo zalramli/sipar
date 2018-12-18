@@ -10,7 +10,7 @@
               <i class="fas fa-table"></i>
               Data Kuliner</div>
             <div class="card-body">
-              <a href="?/=kategoriKulinerInput"><button class="btn btn-secondary"><i class="fa fa-plus"> Tambah</i></button></a>
+              <a href="?/=kategoriKulinerInput"><button class="btn btn-success"><i class="fa fa-plus"> Tambah</i></button></a>
               <div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>

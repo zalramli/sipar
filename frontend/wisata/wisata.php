@@ -11,7 +11,7 @@ if ($_GET['kategori'] == "alam") {
       </div>
       <div class="navigasi">
         <a href="?halaman=wisata&kategori=alam" class="nav-custActive">Alam</a>
-        <a href="?halaman=wisata&kategori=buatan" class="nav-cust">Buatan</a>
+        <a href="?halaman=wisata&kategori=edukasi" class="nav-cust">Edukasi</a>
         <a href="?halaman=wisata&kategori=religi" class="nav-cust">Religi</a>
       </div>
 </div>
@@ -130,7 +130,7 @@ if ($_GET['kategori'] == "alam") {
  ?>
 
 <?php 
-if ($_GET['kategori'] == "buatan") {
+if ($_GET['kategori'] == "edukasi") {
 ?>
 <div class="wrap mb-4">
       <div class="relatif">
@@ -143,14 +143,14 @@ if ($_GET['kategori'] == "buatan") {
       </div>
       <div class="navigasi">
         <a href="?halaman=wisata&kategori=alam" class="nav-cust">Alam</a>
-        <a href="?halaman=wisata&kategori=buatan" class="nav-custActive">Buatan</a>
+        <a href="?halaman=wisata&kategori=edukasi" class="nav-custActive">Edukasi</a>
         <a href="?halaman=wisata&kategori=religi" class="nav-cust">Religi</a>
       </div>
 </div>
 <div class="container-fluid jarak-section">
   <div class="row">
     <div class="col-md-12">
-      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: black" href="">Wisata Buatan</a>
+      <a style="color:gray;" href="index.php">Home</a> <b> > </b> <a style="color: black" href="">Wisata Edukasi</a>
     </div>
   </div>
 </div>
@@ -274,7 +274,7 @@ if ($_GET['kategori'] == "religi") {
       </div>
       <div class="navigasi">
         <a href="?halaman=wisata&kategori=alam" class="nav-cust">Alam</a>
-        <a href="?halaman=wisata&kategori=buatan" class="nav-cust">Buatan</a>
+        <a href="?halaman=wisata&kategori=edukasi" class="nav-cust">Edukasi</a>
         <a href="?halaman=wisata&kategori=religi" class="nav-custActive">Religi</a>
       </div>  
 </div>

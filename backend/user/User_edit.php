@@ -33,7 +33,7 @@ if (isset($_POST['update'])) {
     </div>
     <div class="form-group col-md-4">
       <label for="inputText"><b>Password</b></label>
-      <input type="password" name="psw" class="form-control" id="inputText" placeholder="" value="<?php echo $data['password']; ?>">
+      <input type="text" name="psw" class="form-control" id="inputText" placeholder="" value="<?php echo $data['password']; ?>">
     </div>
   </div>
     

@@ -3,7 +3,7 @@ if (isset($_POST['simpan'])) {
   $kode = $_POST['kodee'];
   $kategori = ucwords($_POST['kategorii']);
 
-  $query = mysqli_query($koneksi,"INSERT INTO kategori_kuliner (id_kategoriKuliner,nama_kategori) VALUES ('$kode','$kategori') ");
+  $query = mysqli_query($koneksi,"INSERT INTO kategori_kuliner (id_kategoriKuliner,nama_kategori) VALUES ('$kode','$kategori')");
    if($query){
         echo "<script>window.location = 'backend.php?/=kategoriKuliner_tampil'</script>";
         }

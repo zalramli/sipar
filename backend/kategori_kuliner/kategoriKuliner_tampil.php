@@ -23,16 +23,15 @@
                   <tbody>
                     <?php
                     $query = mysqli_query($koneksi,"SELECT * FROM kategori_kuliner");
-                    foreach ($query as $data) {
-                      
-                  
+                    while($data = mysqli_fetch_array($query)) {
                     ?>
                     <tr>
-                      <td width=""> <?php echo $data['id_kategoriKuliner']?> </td>
-                      <td width=""> <?php echo $data['nama_kategori']?> </td>
+                      <td width=""> <?php echo $data[0]?> </td>
+                      <td width=""> <?php echo $data[1]?> </td>
                       <td style="text-align: center;" width="">
-                        <a href="backend.php?/=kategori_kulinerEdit&id=<?php echo $data['id_kategoriKuliner']?> " class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
-                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" class="btn btn-danger" href=backend.php?/=kategori_Kulinerhapus&id=<?php echo $data['id_kategoriKuliner']?> "><i class="fa fa-trash"></i></a>
+                        <!-- method GET &id= -->
+                        <a href="backend.php?/=kategori_kulinerEdit&id=<?php echo $data[0]?> " class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
+                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" class="btn btn-danger" href=backend.php?/=kategori_Kulinerhapus&id=<?php echo $data[0]?> "><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php

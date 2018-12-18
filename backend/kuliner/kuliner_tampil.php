@@ -27,7 +27,6 @@ if ($query) {
                       <th>No</th>
                       <th>Nama</th>
                       <th>Kategori</th>
-                      <th>Lokasi</th>
                       <th>Foto</th>
                       <th>Deskripsi</th>
                       <th>Aksi</th>
@@ -44,7 +43,6 @@ if ($query) {
                       <td width="2%"><?php echo $no++."." ?></td>
                       <td width="10%"><?php echo $data['nama']; ?></td>
                       <td width="10%"><?php echo $data['nama_kategori']; ?></td>
-                      <td width="13%"><?php echo $data['lokasi']; ?></td>
                       <td width="20%"><img width="245" height="150" src="asset/img/gprofil_kuliner/<?php echo $data['gambar_profil'] ?>" alt=""></td>
                       <td width="25%"><?php echo substr($data['deskripsi'],0,40)." ..."; ?></td>
                       <td style="text-align: center;" width="20%">

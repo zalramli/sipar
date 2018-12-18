@@ -96,7 +96,7 @@
                     <div class="container-fluid">
                       <?php
                       error_reporting(0);
-                      include 'koneksi/koneksi.php';
+                      require 'koneksi/koneksi.php';
                       if($_GET['/']){
                       include 'backend/'.$_GET['/'].'.php';
                       include 'backend/wisata/'.$_GET['/'].'.php';

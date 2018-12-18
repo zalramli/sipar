@@ -33,8 +33,8 @@
                       <td width=""><?php echo $data['username']; ?></td>
                       <td width=""><?php echo $data['password']; ?></td>
                       <td style="text-align: center;" width="">
-                        <a href="backend.php?/=jadwalEdit&id=<?php echo $data['id_jadwal']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-outline-danger" href="backend.php?/=jadwalHapus&id=<?php echo $data['id_jadwal']; ?>"><i class="fa fa-trash"></i></a>
+                        <a href="backend.php?/=User_edit&id=<?php echo $data['id_user']; ?>" class="btn btn-outline-primary" href=""><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-outline-danger" href="backend.php?/=userHapus&id=<?php echo $data['id_user']; ?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                   <?php } ?>

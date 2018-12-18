@@ -1,18 +1,14 @@
 <?php 
 if (isset($_POST['simpan'])) {
-$user1 = $_POST['user1'];
-$psw = password_hash($_POST['psw'],PASSWORD_DEFAULT);
-$query = mysqli_query($koneksi,"INSERT INTO user VALUES ('','$user1','$psw')");
- if($query){
-        echo "<script>window.location = 'backend.php?/=userTampil'</script>";
-        }
+$username = $_POST['user1'];
+$password = $_POST['psw'];
+$query=mysqli_query($koneksi,"INSERT INTO user VALUES ('','$username','$password')" );
+
+if ($query == true) {
+  echo "<script>window.location = 'backend.php?/=userTampil'</script>";
 }
-
-
-
-
-
- ?>
+}
+?>
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="index.html">Dashboard</a>
@@ -25,11 +21,11 @@ $query = mysqli_query($koneksi,"INSERT INTO user VALUES ('','$user1','$psw')");
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputText"><b>Username</b></label>
-      <input type="text" name="user1" class="form-control" id="inputText" placeholder="masukan nama kendaraan" required >
+      <input type="text" name="user1" class="form-control" id="inputText" placeholder="Masukkan Username" required >
     </div>
     <div class="form-group col-md-4">
       <label for="inputText"><b>Password</b></label>
-      <input type="password" name="psw" class="form-control" id="inputText" placeholder="" required >
+      <input type="text" name="psw" class="form-control" id="inputText" placeholder="Masukkan Password" required >
     </div>
   </div>
     

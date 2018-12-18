@@ -29,11 +29,11 @@ if (isset($_POST['update'])){
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kode</b></label>
-      <input type="text" name="kodeee" class="form-control" id="inputText" placeholder="Masukan kategori kuliner" value="<?= $data['id_kategoriKuliner'] ?>" readonly >
+      <input type="text" name="kodeee" class="form-control" id="inputText" placeholder="Masukan kategori kuliner" value="<?= $data[0] ?>" readonly >
     </div>
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kategori Wisata</b></label>
-      <input type="text" name="kategoriii" class="form-control" id="inputText" placeholder="Masukan kategori kuliner" value=" <?= $data['nama_kategori'] ?>">
+      <input type="text" name="kategoriii" class="form-control" id="inputText" placeholder="Masukan kategori kuliner" value=" <?= $data[1] ?>">
     </div>
   </div>
     

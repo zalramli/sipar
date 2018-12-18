@@ -23,7 +23,7 @@ if (isset($_POST['update'])){
   </li>
   <li class="breadcrumb-item active">Edit Kuliner</li>
 </ol>  
-<a href="?/=kategoriKuliner_tampil"><button class="btn btn-success"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
+<a href="?/=kategoriKuliner_tampil"><button class="btn btn-secondary"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
 
 <form action="" method="post"><br>
   <div class="form-row">

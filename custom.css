@@ -658,7 +658,7 @@ input:checked~label:hover~label {
 }
 .img-event{
     width: 100%;
-    height: 300px;
+    height: 470px;
 }
 .img-eventBest1{
     width: 100%;
@@ -706,12 +706,30 @@ input:checked~label:hover~label {
     padding-top: 200px;
     padding-left: 20px;
 }
+.event-deskripsi3{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+    padding-top: 400px;
+    padding-left: 20px;
+}
 
 .relatif-event:hover .event-deskripsi{
     visibility: visible;
     opacity: 1;
 }
 .relatif-event:hover .event-deskripsi2{
+    visibility: visible;
+    opacity: 1;
+}
+.relatif-event:hover .event-deskripsi3{
     visibility: visible;
     opacity: 1;
 }

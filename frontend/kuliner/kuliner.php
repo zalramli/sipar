@@ -3,7 +3,7 @@ if ($_GET['kategori'] == "cafe") {
   ?>
 <div class="wrap mb-4">
       <div class="relatif">
-      <img src="2.jpg" class="img-fluid" alt="Responsive image">
+      <img src="asset/img/banner/Kulinercafe.jpg" class="img-fluid" alt="Responsive image">
             <div class="bg-black"></div>
       </div>
       <div class="banner-img">
@@ -108,7 +108,7 @@ if ($_GET['kategori'] == "warung") {
   ?>
 <div class="wrap mb-4">
       <div class="relatif">
-      <img src="2.jpg" class="img-fluid" alt="Responsive image">
+      <img src="asset/img/banner/Kulinerwarung.jpg" class="img-fluid" alt="Responsive image">
             <div class="bg-black"></div>
       
       </div>
@@ -215,7 +215,7 @@ if ($_GET['kategori'] == "restoran") {
   ?>
 <div class="wrap mb-4">
       <div class="relatif">
-      <img src="2.jpg" class="img-fluid" alt="Responsive image">
+      <img src="asset/img/banner/Kulinerrestoran.jpg" class="img-fluid" alt="Responsive image">
             <div class="bg-black"></div>
       
       </div>

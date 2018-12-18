@@ -16,9 +16,13 @@
                   <thead>
                     <tr style="text-align: center;">
                       <th>No</th>
+                      <th>Kategori</th>
                       <th>Nama kendaraan</th>
-                      <th>dari</th>
-                      <th>sampai</th>
+                      <th>Dari</th>
+                      <th>Pukul</th>
+                      <th>Tujuan</th>
+                      <th>Pemberhentian</th>
+                      <th>Pukul</th>
                       <th>aksi</th>
                       
                     </tr>
@@ -29,15 +33,18 @@
                     $query = mysqli_query($koneksi,"SELECT * FROM jadwal_transportasi"); 
                     foreach ($query as $data) {
                      ?>                
-                    
                     <tr>
                       <td width=""><?php echo $no++; ?></td>
+                      <td width=""><?php echo $data['jenis_kendaraan']; ?></td>
                       <td width=""><?php echo $data['nama_kendaraan']; ?></td>
                       <td width=""><?php echo $data['dari']; ?></td>
-                      <td width=""><?php echo $data['sampai']; ?></td>
+                      <td width=""><?php echo $data['jam_berangkat']; ?></td>
+                      <td width=""><?php echo $data['tujuan']; ?></td>
+                      <td width=""><?php echo $data['pemberhentian']; ?></td>
+                      <td width=""><?php echo $data['jam_sampai']; ?></td>
                       <td style="text-align: center;" width="">
                         <a href="backend.php?/=jadwalEdit&id=<?php echo $data['id_jadwal']; ?>" class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
-                        <a style="margin-top: 5px;" class="btn btn-danger" href="backend.php?/=jadwalHapus&id=<?php echo $data['id_jadwal']; ?>"><i class="fa fa-trash"></i></a>
+                        <a onclick="return confirm('Anda Yakin Ingin menghapus Data?')" class="btn btn-danger" href="backend.php?/=jadwalHapus&id=<?php echo $data['id_jadwal']; ?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                   <?php } ?>

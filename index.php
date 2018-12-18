@@ -55,9 +55,9 @@
           </li>
           <li class="nav-item">
             <a <?php if(!$_GET) {echo 'class="nav-link"';} 
-            else if ($_GET['halaman'] == "cindramata") {echo 'class="nav-link active"';} 
+            else if ($_GET['halaman'] == "jadwal_transportasi") {echo 'class="nav-link active"';} 
             else {echo 'class="nav-link"';} ?> 
-            href="?halaman=cindramata">Cindramata</a>
+            href="?halaman=jadwal_transportasi">Jadwal Transportasi</a>
           </li>
           <li class="nav-item">
             <a <?php if(!$_GET) {echo 'class="nav-link"';} 
@@ -221,6 +221,7 @@
     include 'frontend/'.$_GET['halaman'].'.php';
     include 'frontend/wisata/'.$_GET['halaman'].'.php';
     include 'frontend/kuliner/'.$_GET['halaman'].'.php';
+    include 'frontend/jadwal_transportasi/'.$_GET['halaman'].'.php';
     }
     ?>
     <!-- footer -->

@@ -184,7 +184,7 @@ if ($_GET['kategori'] == "edukasi") {
 <div class="row">
   <div class="col-md-9">
     <?php
-    $query = mysqli_query($koneksi,"SELECT wisata.deskripsi,wisata.nama,wisata.lokasi,wisata.gambar_profil,wisata.id_wisata,kategori_wisata.nama_kategori, ROUND(AVG(rating_wisata.rating)) AS ratings FROM wisata JOIN kategori_wisata ON wisata.id_kategoriWisata = kategori_wisata.id_kategoriWisata LEFT JOIN rating_wisata ON wisata.id_wisata = rating_wisata.id_wisata WHERE kategori_wisata.nama_kategori='Buatan' GROUP BY wisata.id_wisata ");
+    $query = mysqli_query($koneksi,"SELECT wisata.deskripsi,wisata.nama,wisata.lokasi,wisata.gambar_profil,wisata.id_wisata,kategori_wisata.nama_kategori, ROUND(AVG(rating_wisata.rating)) AS ratings FROM wisata JOIN kategori_wisata ON wisata.id_kategoriWisata = kategori_wisata.id_kategoriWisata LEFT JOIN rating_wisata ON wisata.id_wisata = rating_wisata.id_wisata WHERE kategori_wisata.nama_kategori='Edukasi' GROUP BY wisata.id_wisata ");
     $jml = mysqli_num_rows($query);
     for ($i=0; $i < $jml ; $i++) {
     $data = mysqli_fetch_array($query);

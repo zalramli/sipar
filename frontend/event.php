@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="relatif-event">
-            <img src="asset/img/gdetail_kuliner/ngopi-hore-bawah-jembatan-bartender-kafe-kolong-jember-kab.jpg" alt="Card Image" class="img-eventBest1">
+            <img src="asset/img/event/1.jpg" alt="Card Image" class="img-eventBest1">
             <div class="banner-event">
               <h4 class="text-center text-white">JFC</h4>
             </div>
@@ -33,7 +33,7 @@
           <div class="row">
             <div class="col-md-12 mb-4">
               <div class="relatif-event">
-                <img src="asset/img/gdetail_kuliner/ngopi-hore-bawah-jembatan-bartender-kafe-kolong-jember-kab.jpg" alt="Card Image" class="img-eventBest2">
+                <img src="asset/img/event/4.jpg" alt="Card Image" class="img-eventBest2">
                 <div class="banner-event"><h5 class="text-center text-white">JFC</h5></div>
                 <div class="event-deskripsi2">
               <h3>15 Desember 2018</h3>
@@ -44,7 +44,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="relatif-event">
-                <img src="asset/img/gdetail_kuliner/ngopi-hore-bawah-jembatan-bartender-kafe-kolong-jember-kab.jpg" alt="Card Image" class="img-eventBest2">
+                <img src="asset/img/event/6.jpg" alt="Card Image" class="img-eventBest2">
                 <div class="banner-event"><h5 class="text-center text-white">JFC</h5></div>
                 <div class="event-deskripsi2">
               <h3>15 Desember 2018</h3>

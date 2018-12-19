@@ -55,9 +55,9 @@
           </li>
           <li class="nav-item">
             <a <?php if(!$_GET) {echo 'class="nav-link"';} 
-            else if ($_GET['halaman'] == "jadwal_transportasi") {echo 'class="nav-link active"';} 
+            else if ($_GET['halaman'] == "cindramata") {echo 'class="nav-link active"';} 
             else {echo 'class="nav-link"';} ?> 
-            href="?halaman=jadwal_transportasi">Jadwal Transportasi</a>
+            href="?halaman=cindramata">Cindramata</a>
           </li>
           <li class="nav-item">
             <a <?php if(!$_GET) {echo 'class="nav-link"';} 
@@ -221,7 +221,6 @@
     include 'frontend/'.$_GET['halaman'].'.php';
     include 'frontend/wisata/'.$_GET['halaman'].'.php';
     include 'frontend/kuliner/'.$_GET['halaman'].'.php';
-    include 'frontend/jadwal_transportasi/'.$_GET['halaman'].'.php';
     }
     ?>
     <!-- footer -->
@@ -231,23 +230,32 @@
           <div class="col-md-3 mx-auto">
             <h6 class="text-white">COMPANY</h6>
             <hr class="d-inline-block">
-            <p class="text-footer">Politeknik Negeri Jember adalah Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nisi molestiae accusamus laudantium!</p>
+            <p class="text-footer"> Kelompok 4
+            <br>
+            Golongan A
+            <br>
+            Teknik Informatika 2017
+            <br>
+            Teknologi Informasi
+            <br>
+            Politeknik Negeri Jember
+            </p>
           </div>
           <div class="col-md-3 mx-auto">
             <h6 class="text-white">TEAM</h6>
             <hr class="d-inline-block">
-            <p>Iyek</p>
-            <p>Iyek</p>
-            <p>Iyek</p>
-            <p>Iyek</p>
+            <p>M. Rizal Ramli</p>
+            <p>Rakhmat Fadilah</p>
+            <p>Ali Wajhah</p>
+            <p>Berliana Rohmah A.</p>
           </div>
           <div class="col-md-3 mx-auto">
             <h6 class="text-white">CONTACT</h6>
             <hr class="d-inline-block">
-            <p><i class="fa fa-home mr-3"></i> Politeknik negeri jember</p>
-            <p><i class="fa fa-envelope mr-3"></i> ali_iyek@gmail.com</p>
-            <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+            <p><i class="fa fa-home mr-3"></i> Politeknik Negeri Jember</p>
+            <p><i class="fa fa-envelope mr-3"></i> rakhmatfadilah2@gmail.com</p>
+            <p><i class="fa fa-phone mr-3"></i> +6281 237 640 402</p>
+            <p><i class="fa fa-print mr-3"></i> . </p>
           </div>
           <div class="col-md-3 mx-auto">
              <?php 

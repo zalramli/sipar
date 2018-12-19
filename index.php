@@ -274,7 +274,7 @@
       </div>
       <div class="sosmed">
         <div class="text-center text-white">
-          <h6 class="pt-3">@POLIJE 2018</h6>
+          <a style="text-decoration: none" class="text-white" href="login.php"><h6 class="pt-3">@POLIJE 2018</h6></a>
         </div>
       </div>
     </footer>

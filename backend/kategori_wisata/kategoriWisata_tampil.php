@@ -1,3 +1,4 @@
+
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
@@ -10,7 +11,7 @@
               <i class="fas fa-table"></i>
               Data Wisata</div>
             <div class="card-body">
-              <a href="?/=kategoriWisata_input"><button class="btn btn-success"><i class="fa fa-plus"> Tambah</i></button></a>
+              <a href="?/=kategoriWisata_input"><button class="btn btn-secondary"><i class="fa fa-plus"> Tambah</i></button></a>
               <div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>

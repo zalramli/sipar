@@ -479,10 +479,10 @@ a.card-link:hover {
 /*MEMBUAT NAVIGASI DI DALAM GAMBAR KULINER DAN WISATA*/
 .navigasi {
     bottom: 0;
-    transform: translateX(50%);
-    -webkit-transform: translateX(50%);
-    -o-transform: translateX(50%);
-    -moz-transform: translateX(50%);
+    transform: translateX(60%);
+    -webkit-transform: translateX(60%);
+    -o-transform: translateX(60%);
+    -moz-transform: translateX(60%);
     position: absolute;
     height: 160px;
 }

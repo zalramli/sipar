@@ -8,9 +8,8 @@
 <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Data Jadwal trasnportasi</div>
+              Data Pesan Bantuan</div>
             <div class="card-body">
-              <a href="?/=bantuan"><button class="btn btn-success"><i class="fa fa-plus"> Tambah</i></button></a>
               <div class="table-responsive"><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>

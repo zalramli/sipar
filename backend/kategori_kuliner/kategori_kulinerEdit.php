@@ -1,36 +1,35 @@
 <?php
 	$id=$_GET['id'];
-	$query=mysqli_query($koneksi,"SELECT * FROM kategori_wisata WHERE id_kategoriWisata='$id'");
+	$query=mysqli_query($koneksi,"SELECT * FROM kategori_kuliner WHERE id_kategoriKuliner='$id'");
 	$data=mysqli_fetch_array($query);
 
 if (isset($_POST['update'])){
 	$kode = $_POST['kode'];
 	$kategori = ucwords($_POST['kategori']);
 
-	$query2 = mysqli_query($koneksi, "UPDATE kategori_wisata SET id_kategoriWisata='$kode', nama_kategori='$kategori' WHERE id_kategoriWisata='$id'");
+	$query2 = mysqli_query($koneksi, "UPDATE kategori_kuliner SET id_kategoriKuliner='$kode', nama_kategori='$kategori' WHERE id_kategoriKuliner='$id'");
 	 if($query2){
-        echo "<script>window.location = 'backend.php?/=kategoriWisata_tampil'</script>";
+        echo "<script>window.location = 'backend.php?/=kategoriKuliner_tampil'</script>";
         }
 }
 
 ?>
-
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="index.html">Dashboard</a>
   </li>
   <li class="breadcrumb-item active">Input Wisata</li>
 </ol>  
-<a href="?/=kategoriWisata_tampil"><button class="btn btn-secondary"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
+<a href="?/=kategoriKuliner_tampil"><button class="btn btn-secondary"><i class="fa fa-arrow-circle-left"> Kembali</i></button></a>
 
 <form action="" method="post"><br>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputText"><b>Kode</b></label>
-      <input type="text" name="kode" class="form-control" id="inputText" placeholder="Masukan kategori wisata" value="<?= $data['id_kategoriWisata'] ?>" readonly>
+      <input type="text" name="kode" class="form-control" id="inputText" placeholder="Masukan kategori wisata" value="<?= $data['id_kategoriKuliner'] ?>" readonly>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputText"><b>Kategori Wisata</b></label>
+      <label for="inputText"><b>Kategori Kuliner</b></label>
       <input type="text" name="kategori" class="form-control" id="inputText" placeholder="Masukan kategori wisata" value=" <?= $data['nama_kategori'] ?>">
     </div>
   </div>

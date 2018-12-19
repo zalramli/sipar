@@ -19,11 +19,11 @@ if ($query == true) {
 
 <form action="" method="post"><br>
   <div class="form-row">
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="inputText"><b>Username</b></label>
       <input type="text" name="user1" class="form-control" id="inputText" placeholder="Masukkan Username" required >
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="inputText"><b>Password</b></label>
       <input type="text" name="psw" class="form-control" id="inputText" placeholder="Masukkan Password" required >
     </div>

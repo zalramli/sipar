@@ -18,7 +18,7 @@ $cek = mysqli_num_rows($data);
  
 if($cek > 0){
   $_SESSION['username'] = "login";
-  header("location:backend.php");
+  header("location:backend.php?/=dashboard");
 }else{
   header("location:login.php");
 }

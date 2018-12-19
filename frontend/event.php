@@ -116,7 +116,7 @@
           <div class="col-md-4 jarak-section">
             <a style="text-decoration: none; color: black" class="lightbox" href="event.jpg">
                 <div class="relatif-event">
-            <img src="asset/img/gdetail_kuliner/ngopi-hore-bawah-jembatan-bartender-kafe-kolong-jember-kab.jpg" alt="Card Image" class="img-event">
+            <img src="asset/img/event/<?php echo $data['gambar'] ?>" alt="Card Image" class="img-event">
             <div class="event-deskripsi3">
               <h4><?php echo $data['nama'] ?></h4>
               <h4><?php echo date('d M Y',strtotime($data['tgl_event'])) ?></h4>

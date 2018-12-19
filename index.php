@@ -21,7 +21,7 @@
     <div class="jarak-nav"> 
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
       <a class="navbar-brand ml-5" href="index.php">
-        <img src="asset/img/logo.png" width="140" height="50" class="d-inline-block align-top" alt="">
+        <img src="asset/img/logofix.png" width="140" height="50" class="d-inline-block align-top" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -55,9 +55,9 @@
           </li>
           <li class="nav-item">
             <a <?php if(!$_GET) {echo 'class="nav-link"';} 
-            else if ($_GET['halaman'] == "cindramata") {echo 'class="nav-link active"';} 
+            else if ($_GET['halaman'] == "jadwal_transportasi") {echo 'class="nav-link active"';} 
             else {echo 'class="nav-link"';} ?> 
-            href="?halaman=cindramata">Cindramata</a>
+            href="?halaman=jadwal_transportasi">Jadwal Transportasi</a>
           </li>
           <li class="nav-item">
             <a <?php if(!$_GET) {echo 'class="nav-link"';} 
@@ -221,6 +221,7 @@
     include 'frontend/'.$_GET['halaman'].'.php';
     include 'frontend/wisata/'.$_GET['halaman'].'.php';
     include 'frontend/kuliner/'.$_GET['halaman'].'.php';
+    include 'frontend/jadwal_transportasi/'.$_GET['halaman'].'.php';
     }
     ?>
     <!-- footer -->
